@@ -23,7 +23,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main class="scroll-container">
 			<slot />
 		</main>
 		<Footer />
@@ -76,6 +76,59 @@ const { title } = Astro.props;
 			background: none;
 			-webkit-background-clip: initial;
 			-webkit-text-fill-color: #60a5fa;
+		}
+	}
+	
+	/* Scroll Snap */
+	.scroll-container {
+		scroll-snap-type: y mandatory;
+		overflow-y: scroll;
+		height: 100vh;
+	}
+	
+	.scroll-section {
+		scroll-snap-align: start;
+		height: 100vh;
+		min-height: 100vh;
+	}
+	
+	/* Mobile Optimizations */
+	@media (max-width: 640px) {
+		.scroll-section {
+			padding: 1rem 0;
+		}
+		
+		/* Improve touch scrolling on mobile */
+		.scroll-container {
+			-webkit-overflow-scrolling: touch;
+		}
+		
+		/* Better text sizing on mobile */
+		h1, h2, h3 {
+			word-wrap: break-word;
+			hyphens: auto;
+		}
+		
+		/* Improve card spacing on mobile */
+		.grid {
+			gap: 1rem;
+		}
+		
+		/* Hide floating elements on very small screens */
+		.animate-float {
+			display: none;
+		}
+		
+		/* Better button sizing on mobile */
+		button, a {
+			min-height: 44px;
+			min-width: 44px;
+		}
+		
+		/* Improve video performance on mobile */
+		video {
+			object-fit: cover;
+			object-position: center;
 		}
 	}
 </style>
