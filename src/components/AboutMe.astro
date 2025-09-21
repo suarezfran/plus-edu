@@ -1,15 +1,58 @@
-<section id="aboutme" class="flex flex-col md:flex-row items-center justify-center py-8 bg-gray-100 min-h-screen">
-    <div class="text-center max-w-4xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-blue-900 mb-8">SOMOS</h2>
+<section id="aboutme" class="relative py-20 bg-gradient-to-br from-slate-50 via-white to-orange-50/30 overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, #f97316 1px, transparent 0); background-size: 40px 40px;"></div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-orange-100/30 rounded-full blur-xl animate-float"></div>
+    <div class="absolute bottom-20 right-10 w-32 h-32 bg-orange-200/20 rounded-full blur-2xl animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-orange-300/20 rounded-full blur-lg animate-float" style="animation-delay: 1s;"></div>
 
-        <!-- Texto centrado en una columna más pequeña para mejor lectura -->
-        <div class="text-center">
-            <p class="text-gray-700 text-lg leading-relaxed">
-                Somos un grupo de profesionales convencidos de la importancia de
-                pensar las instituciones educativas con el propósito de
-                potenciar las relaciones entre los diferentes actores, los
-                aprendizajes y el desarrollo personal.
+    <div class="relative max-w-7xl mx-auto px-6 md:px-12">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 bg-clip-text text-transparent mb-4 relative">
+                <span class="inline-block animate-pulse-slow">SOMOS</span>
+                <!-- Decorative underline -->
+                <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full animate-pulse"></div>
+            </h2>
+            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed animate-fade-in-up opacity-0" style="animation-delay: 0.5s; animation-fill-mode: forwards;">
+                Conoce nuestro equipo y nuestra misión educativa
             </p>
+        </div>
+
+        <!-- Main Content Card -->
+        <div class="max-w-4xl mx-auto">
+            <div class="group relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                <div class="relative bg-white/80 backdrop-blur-sm p-12 lg:p-16 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-orange-100/50 text-center">
+                    <!-- Profile Photo -->
+                    <div class="w-32 h-32 mx-auto mb-8 relative group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full rounded-full overflow-hidden shadow-2xl ring-4 ring-orange-500">
+                            <img 
+                                src="/foto-perfil.png" 
+                                alt="Perfil del equipo" 
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-3xl lg:text-4xl font-bold text-slate-800 mb-6 group-hover:text-orange-700 transition-colors duration-300">
+                        Nuestro Equipo
+                    </h3>
+                    
+                    <p class="text-slate-600 leading-relaxed text-xl max-w-3xl mx-auto">
+                        Somos un grupo de profesionales convencidos de la importancia de
+                        pensar las instituciones educativas con el propósito de
+                        potenciar las relaciones entre los diferentes actores, los
+                        aprendizajes y el desarrollo personal.
+                    </p>
+                    
+                    <!-- Decorative Line -->
+                    <div class="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
