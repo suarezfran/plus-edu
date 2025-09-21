@@ -1,55 +1,215 @@
 <header
-    class="sticky top-0 left-0 w-full flex items-center justify-center md:justify-between p-4 bg-gray-100 shadow-md text-lg font-popins font-semibold z-50"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-500"
+    id="header"
 >
-    <div class="logo-container">
-        <img
-            src="/logo-plus-edu-removebg-preview.png"
-            alt="Logo +EDU"
-            class="w-24 h-auto"
-        />
+    <!-- Modern gradient background with subtle pattern -->
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-50/95 via-white/90 to-slate-50/95 backdrop-blur-xl border-b border-slate-200/30"></div>
+    
+    <!-- Subtle pattern overlay for educational feel -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, #64748b 1px, transparent 0); background-size: 20px 20px;"></div>
     </div>
-    <nav class="hidden md:flex">
-        <ul class="flex justify-evenly items-center space-x-6">
-            <li>
-                <a
-                    href="#hacemos"
-                    class="text-blue-800 hover:bg-blue-800 hover:text-white px-4 py-2 rounded transition"
-                    >Hacemos</a
-                >
-            </li>
-            <li>
-                <a
-                    href="#queremos"
-                    class="text-blue-800 hover:bg-blue-800 hover:text-white px-4 py-2 rounded transition"
-                    >Queremos</a
-                >
-            </li>
-            <!-- <li>
-                <a
-                    href="#fomentamos"
-                    class="text-blue-800 hover:bg-blue-800 hover:text-white px-4 py-2 rounded transition"
-                    >Fomentamos</a>
-            </li> -->
-            <li>
-                <a
-                    href="#vivimos"
-                    class="text-blue-800 hover:bg-blue-800 hover:text-white px-4 py-2 rounded transition"
-                    >Vivimos</a
-                >
-            </li>
-            <!-- <li>
-                <a
-                    href="#servicios"
-                    class="text-blue-800 hover:bg-blue-800 hover:text-white px-4 py-2 rounded transition"
-                    >Servicios</a>
-            </li> -->
-            <li>
-                <a
-                    href="#aboutme"
-                    class="text-blue-800 hover:bg-blue-800 hover:text-white px-4 py-2 rounded transition"
-                    >Somos</a
-                >
-            </li>
-        </ul>
-    </nav>
+    
+    <!-- Content -->
+    <div class="relative flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 max-w-7xl mx-auto">
+        <!-- Logo Section -->
+        <div class="flex items-center space-x-3 group">
+            <div class="relative">
+                <img
+                    src="/logo-plus-edu-removebg-preview.png"
+                    alt="Logo +EDU"
+                    class="h-10 sm:h-12 w-auto transition-all duration-300 group-hover:scale-105"
+                />
+                <!-- Subtle glow effect -->
+                <div class="absolute inset-0 bg-orange-500/20 rounded-full blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-lg sm:text-xl font-bold text-slate-800 group-hover:text-orange-600 transition-colors duration-300">+EDU</span>
+                <span class="text-xs text-slate-500 font-medium hidden sm:block">Educación Innovadora</span>
+            </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-1">
+            <a
+                href="#hacemos"
+                class="group relative px-4 py-2.5 text-slate-700 font-medium rounded-xl transition-all duration-300 hover:text-orange-600 hover:bg-orange-50/80"
+            >
+                <span class="relative z-10 flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                    <span>Hacemos</span>
+                </span>
+                <div class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-orange-500 rounded-full transform -translate-x-1/2 group-hover:w-3/4 transition-all duration-300"></div>
+            </a>
+            <a
+                href="#queremos"
+                class="group relative px-4 py-2.5 text-slate-700 font-medium rounded-xl transition-all duration-300 hover:text-red-600 hover:bg-red-50/80"
+            >
+                <span class="relative z-10 flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                    <span>Queremos</span>
+                </span>
+                <div class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-red-500 rounded-full transform -translate-x-1/2 group-hover:w-3/4 transition-all duration-300"></div>
+            </a>
+            <a
+                href="#vivimos"
+                class="group relative px-4 py-2.5 text-slate-700 font-medium rounded-xl transition-all duration-300 hover:text-pink-600 hover:bg-pink-50/80"
+            >
+                <span class="relative z-10 flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span>Vivimos</span>
+                </span>
+                <div class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-pink-500 rounded-full transform -translate-x-1/2 group-hover:w-3/4 transition-all duration-300"></div>
+            </a>
+            <a
+                href="#aboutme"
+                class="group relative px-4 py-2.5 text-slate-700 font-medium rounded-xl transition-all duration-300 hover:text-orange-600 hover:bg-orange-50/80"
+            >
+                <span class="relative z-10 flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    <span>Somos</span>
+                </span>
+                <div class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-orange-500 rounded-full transform -translate-x-1/2 group-hover:w-3/4 transition-all duration-300"></div>
+            </a>
+        </nav>
+
+
+        <!-- Mobile Menu Button -->
+        <button
+            class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 hover:text-orange-600 transition-all duration-300"
+            id="mobile-menu-button"
+            aria-label="Toggle mobile menu"
+        >
+            <svg class="w-6 h-6 transition-transform duration-300" id="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg class="w-6 h-6 transition-transform duration-300 hidden" id="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="lg:hidden absolute top-full left-0 w-full bg-white/98 backdrop-blur-xl border-b border-slate-200/30 transform -translate-y-full opacity-0 transition-all duration-500 shadow-xl" id="mobile-menu">
+        <div class="px-4 py-6 space-y-1">
+            <a
+                href="#hacemos"
+                class="group flex items-center space-x-3 px-4 py-3 text-slate-700 font-medium rounded-xl hover:bg-orange-50 hover:text-orange-600 transition-all duration-300"
+            >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                </svg>
+                <span>Hacemos</span>
+            </a>
+            <a
+                href="#queremos"
+                class="group flex items-center space-x-3 px-4 py-3 text-slate-700 font-medium rounded-xl hover:bg-red-50 hover:text-red-600 transition-all duration-300"
+            >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+                <span>Queremos</span>
+            </a>
+            <a
+                href="#vivimos"
+                class="group flex items-center space-x-3 px-4 py-3 text-slate-700 font-medium rounded-xl hover:bg-pink-50 hover:text-pink-600 transition-all duration-300"
+            >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Vivimos</span>
+            </a>
+            <a
+                href="#aboutme"
+                class="group flex items-center space-x-3 px-4 py-3 text-slate-700 font-medium rounded-xl hover:bg-orange-50 hover:text-orange-600 transition-all duration-300"
+            >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span>Somos</span>
+            </a>
+            
+        </div>
+    </div>
 </header>
+
+<script>
+    // Mobile menu toggle with icon switching
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    let isMenuOpen = false;
+
+    mobileMenuButton?.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+            mobileMenu.style.transform = 'translateY(0)';
+            mobileMenu.style.opacity = '1';
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+        } else {
+            mobileMenu.style.transform = 'translateY(-100%)';
+            mobileMenu.style.opacity = '0';
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+            isMenuOpen = false;
+            mobileMenu.style.transform = 'translateY(-100%)';
+            mobileMenu.style.opacity = '0';
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        });
+    });
+
+    // Enhanced header scroll effect
+    const header = document.getElementById('header');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 50) {
+            header.style.background = 'rgba(248, 250, 252, 0.98)';
+            header.style.backdropFilter = 'blur(20px)';
+            header.style.borderBottomColor = 'rgba(148, 163, 184, 0.2)';
+        } else {
+            header.style.background = 'rgba(248, 250, 252, 0.95)';
+            header.style.backdropFilter = 'blur(16px)';
+            header.style.borderBottomColor = 'rgba(148, 163, 184, 0.1)';
+        }
+        
+        lastScrollY = currentScrollY;
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
