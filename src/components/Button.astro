@@ -1,0 +1,42 @@
+---
+interface Props {
+	href: string;
+	variant?: "primary" | "outline" | "ghost" | "light";
+	class?: string;
+	arrow?: boolean;
+}
+const { href, variant = "primary", class: cls = "", arrow = false } = Astro.props;
+
+const base =
+	"group inline-flex items-center justify-center gap-2 rounded-full font-semibold tracking-tight transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2";
+
+const variants = {
+	// solid violet on light backgrounds
+	primary:
+		"px-6 py-3.5 bg-violet-500 text-white shadow-glow-violet hover:bg-violet-600 hover:-translate-y-0.5",
+	// outline on light backgrounds
+	outline:
+		"px-6 py-3.5 border border-ink-200 text-ink-900 hover:border-violet-400 hover:text-violet-600 hover:bg-violet-50",
+	// subtle text link
+	ghost:
+		"px-2 py-1 text-violet-600 hover:text-violet-700",
+	// for dark (indigo) backgrounds
+	light:
+		"px-6 py-3.5 bg-white text-ink-900 hover:bg-lavender-200 hover:-translate-y-0.5 shadow-lift",
+};
+
+const isExternal = href.startsWith("http") || href.startsWith("mailto") || href.startsWith("tel");
+---
+
+<a
+	href={href}
+	class={`${base} ${variants[variant]} ${cls}`}
+	{...isExternal ? { target: href.startsWith("http") ? "_blank" : undefined, rel: "noopener noreferrer" } : {}}
+>
+	<slot />
+	{arrow && (
+		<svg class="w-[1.1em] h-[1.1em] transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+		</svg>
+	)}
+</a>

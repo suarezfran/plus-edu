@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# source brief & raw brand assets (not part of the site build)
+MasEDU_Presentacion_Comercial.docx
+WhatsApp Image*.jpeg
