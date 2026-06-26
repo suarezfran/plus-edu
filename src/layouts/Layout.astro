@@ -13,11 +13,14 @@ const { title } = Astro.props;
 			name="description"
 			content="La educación innovadora empodera a los estudiantes para enfrentar el futuro con creatividad y pensamiento crítico."
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
 			rel="stylesheet"
 		/>
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#14284b" />
 		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 		<title>{title}</title>
 	</head>
@@ -25,8 +28,8 @@ const { title } = Astro.props;
 		<Header />
 		<main class="scroll-container">
 			<slot />
+			<Footer />
 		</main>
-		<Footer />
 	</body>
 </html>
 <style is:global>
@@ -34,101 +37,112 @@ const { title } = Astro.props;
 		scroll-behavior: smooth;
 		font-family: 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
 	}
-	
+
 	body {
 		margin: 0;
 		padding: 0;
 		overflow-x: hidden;
+		background: #ffffff;
+		color: #14284b;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
 	}
-	
+
+	/* Branded text selection */
+	::selection {
+		background: #14284b;
+		color: #ffffff;
+	}
+
 	/* Custom scrollbar */
 	::-webkit-scrollbar {
-		width: 8px;
+		width: 10px;
 	}
-	
+
 	::-webkit-scrollbar-track {
-		background: #f1f5f9;
+		background: #f1f5fb;
 	}
-	
+
 	::-webkit-scrollbar-thumb {
-		background: linear-gradient(to bottom, #3b82f6, #6b7280);
-		border-radius: 4px;
+		background: linear-gradient(to bottom, #1e3560, #14284b);
+		border-radius: 9999px;
+		border: 2px solid #f1f5fb;
 	}
-	
+
 	::-webkit-scrollbar-thumb:hover {
-		background: linear-gradient(to bottom, #2563eb, #4b5563);
+		background: linear-gradient(to bottom, #fbc81b, #cb8a03);
 	}
-	
-	/* Smooth animations */
-	* {
-		transition: all 0.2s ease-in-out;
-	}
-	
+
 	/* Video optimization */
 	video {
 		object-fit: cover;
 		object-position: center;
 	}
-	
+
 	/* Gradient text support for older browsers */
 	@supports not (background-clip: text) {
 		.bg-clip-text {
 			background: none;
 			-webkit-background-clip: initial;
-			-webkit-text-fill-color: #60a5fa;
+			-webkit-text-fill-color: #fbc81b;
 		}
 	}
-	
-	/* Scroll Snap */
+
+	/* Scroll Snap — proximity is gentler than mandatory and never traps content */
 	.scroll-container {
-		scroll-snap-type: y mandatory;
+		scroll-snap-type: y proximity;
+		scroll-padding-top: 5rem;
 		overflow-y: scroll;
+		overflow-x: hidden;
 		height: 100vh;
 	}
-	
+
 	.scroll-section {
 		scroll-snap-align: start;
-		height: 100vh;
 		min-height: 100vh;
 	}
-	
+
+	/* The footer is shorter than the viewport — snap to its end so the
+	   "Contacto" link reliably settles with the footer in view. */
+	.scroll-container > footer {
+		scroll-snap-align: end;
+	}
+
+	/* Respect users who prefer reduced motion */
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+
 	/* Mobile Optimizations */
 	@media (max-width: 640px) {
 		.scroll-section {
 			padding: 1rem 0;
 		}
-		
+
 		/* Improve touch scrolling on mobile */
 		.scroll-container {
 			-webkit-overflow-scrolling: touch;
 		}
-		
+
 		/* Better text sizing on mobile */
 		h1, h2, h3 {
 			word-wrap: break-word;
 			hyphens: auto;
 		}
-		
-		/* Improve card spacing on mobile */
-		.grid {
-			gap: 1rem;
-		}
-		
-		/* Hide floating elements on very small screens */
-		.animate-float {
-			display: none;
-		}
-		
+
 		/* Better button sizing on mobile */
 		button, a {
 			min-height: 44px;
-			min-width: 44px;
-		}
-		
-		/* Improve video performance on mobile */
-		video {
-			object-fit: cover;
-			object-position: center;
 		}
 	}
 </style>

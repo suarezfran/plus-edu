@@ -8,39 +8,42 @@ export default {
 				'display': ['Poppins', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
 			},
 			colors: {
-				'edu-blue': {
-					50: '#eff6ff',
-					100: '#dbeafe',
-					200: '#bfdbfe',
-					300: '#93c5fd',
-					400: '#60a5fa',
-					500: '#3b82f6',
-					600: '#2563eb',
-					700: '#1d4ed8',
-					800: '#1e40af',
-					900: '#1e3a8a',
+				// Brand navy — from the +EDU logo wordmark
+				'navy': {
+					50: '#f1f5fb',
+					100: '#dde7f4',
+					200: '#c0d2eb',
+					300: '#93b2db',
+					400: '#5f8bc6',
+					500: '#3d6cb0',
+					600: '#2d5494',
+					700: '#264478',
+					800: '#1e3560',
+					900: '#14284b',
+					950: '#0c1a33',
 				},
-				'edu-cyan': {
-					50: '#ecfeff',
-					100: '#cffafe',
-					200: '#a5f3fc',
-					300: '#67e8f9',
-					400: '#22d3ee',
-					500: '#06b6d4',
-					600: '#0891b2',
-					700: '#0e7490',
-					800: '#155e75',
-					900: '#164e63',
-				}
+				// Brand gold — from the +EDU logo swoosh
+				'gold': {
+					50: '#fffbeb',
+					100: '#fff4c6',
+					200: '#ffe888',
+					300: '#ffd84a',
+					400: '#fbc81b',
+					500: '#ebb008',
+					600: '#cb8a03',
+					700: '#a26307',
+					800: '#864e0d',
+					900: '#724011',
+				},
 			},
 			animation: {
 				'fade-in': 'fadeIn 0.6s ease-in-out',
 				'fade-in-up': 'fadeInUp 0.8s ease-out',
 				'slide-up': 'slideUp 0.8s ease-out',
-				'float': 'float 3s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite',
 				'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-				'glow': 'glow 2s ease-in-out infinite alternate',
-				'gradient-shift': 'gradientShift 3s ease-in-out infinite',
+				'glow': 'glow 2.4s ease-in-out infinite alternate',
+				'gradient-shift': 'gradientShift 6s ease-in-out infinite',
 			},
 			keyframes: {
 				fadeIn: {
@@ -57,11 +60,11 @@ export default {
 				},
 				float: {
 					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' },
+					'50%': { transform: 'translateY(-14px)' },
 				},
 				glow: {
-					'0%': { textShadow: '0 0 5px rgba(96, 165, 250, 0.5), 0 0 10px rgba(59, 130, 246, 0.3), 0 0 15px rgba(37, 99, 235, 0.2)' },
-					'100%': { textShadow: '0 0 10px rgba(96, 165, 250, 0.8), 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(37, 99, 235, 0.4)' },
+					'0%': { textShadow: '0 0 8px rgba(251, 200, 27, 0.35), 0 0 18px rgba(251, 200, 27, 0.2)' },
+					'100%': { textShadow: '0 0 16px rgba(251, 200, 27, 0.65), 0 0 30px rgba(251, 200, 27, 0.4)' },
 				},
 				gradientShift: {
 					'0%, 100%': { backgroundPosition: '0% 50%' },
