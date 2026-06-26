@@ -101,10 +101,20 @@ const audiencias = [
 				</div>
 			</div>
 		</div>
+		<!-- subtle scroll cue -->
+		<a
+			href="#quienes"
+			aria-label="Desplazar para ver más"
+			class="group absolute bottom-8 left-1/2 hidden -translate-x-1/2 sm:block"
+		>
+			<span class="block h-10 w-px overflow-hidden bg-white/20">
+				<span class="block h-3 w-px bg-gradient-to-b from-cyan-400 to-violet-500 animate-scroll-hint"></span>
+			</span>
+		</a>
 	</section>
 
 	<!-- ============ QUIÉNES SOMOS ============ -->
-	<section class="bg-white py-24 md:py-32">
+	<section id="quienes" class="bg-white py-24 md:py-32">
 		<div class="mx-auto max-w-7xl px-5 sm:px-8">
 			<div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 				<div data-reveal>
