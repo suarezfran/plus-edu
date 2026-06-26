@@ -1,23 +1,322 @@
 ---
-import AboutMe from "../components/AboutMe.astro";
-import Fomentamos from "../components/Fomentamos.astro";
-import Hacemos from "../components/Hacemos.astro";
-import Queremos from "../components/Queremos.astro";
-import Servicios from "../components/Servicios.astro";
-import Vivimos from "../components/Vivimos.astro";
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
+import Arch from "../components/Arch.astro";
+import Button from "../components/Button.astro";
+
+const pillars = [
+	{
+		n: "01",
+		name: "Capacitación",
+		tag: "Disponible hoy",
+		tagClass: "text-cyan-300 ring-cyan-400/30",
+		title: "Formación docente y de equipos",
+		body: "Cuatro líneas formativas —in-house o abiertas— para equipos docentes, directivos, estudiantes y familias. Sin dependencias técnicas.",
+		href: "/capacitaciones",
+	},
+	{
+		n: "02",
+		name: "Consultoría",
+		tag: "Disponible hoy",
+		tagClass: "text-cyan-300 ring-cyan-400/30",
+		title: "Acompañamiento institucional",
+		body: "Diagnóstico, acompañamiento de equipos directivos y diseño de procesos para centros que buscan una transformación real.",
+		href: "/consultoria",
+	},
+	{
+		n: "03",
+		name: "+EduMap",
+		tag: "En desarrollo",
+		tagClass: "text-violet-300 ring-violet-400/30",
+		title: "Plataforma psicopedagógica",
+		body: "Despistaje, perfiles, adecuaciones curriculares, derivación y seguimiento longitudinal para centros, profesionales y clínicas.",
+		href: "/edumap",
+	},
+];
+
+const valores = [
+	["Personalización", "Cada institución, equipo y estudiante son únicos."],
+	["Accesibilidad del conocimiento", "El saber especializado no puede quedar reservado a pocos."],
+	["Rigor basado en evidencia", "Decisiones sustentadas en datos con fuente verificable."],
+	["Compromiso con la inclusión", "La inclusión es responsabilidad de toda la comunidad."],
+	["Puente diagnóstico–acción", "Traducimos perfiles clínicos en respuestas concretas para el aula."],
+	["Desde adentro", "Asesoramos desde la experiencia real de gestionar instituciones."],
+];
+
+const audiencias = [
+	["Centros educativos", "Colegios privados de primaria y secundaria en Uruguay y la región."],
+	["Profesionales independientes", "Psicopedagogos y psicólogos educativos con práctica clínica."],
+	["Clínicas especializadas", "Equipos multidisciplinares de atención a las dificultades de aprendizaje."],
+];
 ---
 
-<Layout title="+EDU">
-	<Welcome />
-	<Hacemos />
-	<Queremos />
-	<Fomentamos />
-	<Vivimos />
-	<AboutMe />
-	<Servicios />
-</Layout>
+<Layout
+	title="+EDU Consultora — Educación inclusiva en Uruguay y Latinoamérica"
+	description="+EDU transforma centros educativos en comunidades reales mediante capacitación, consultoría y la plataforma psicopedagógica +EduMap."
+>
+	<!-- ============ HERO ============ -->
+	<section class="relative overflow-hidden bg-ink-900 text-white">
+		<!-- gradient atmosphere -->
+		<div class="pointer-events-none absolute inset-0">
+			<div class="absolute -left-32 top-10 h-[32rem] w-[32rem] rounded-full bg-iris-600/25 blur-[120px]"></div>
+			<div class="absolute right-0 top-1/3 h-[28rem] w-[28rem] rounded-full bg-cyan-500/15 blur-[120px]"></div>
+			<div class="absolute -bottom-20 left-1/3 h-[26rem] w-[26rem] rounded-full bg-violet-600/20 blur-[120px]"></div>
+		</div>
+		<!-- subtle grid -->
+		<div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:64px 64px;"></div>
 
-<style>
-</style>
+		<div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 pt-36 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:pb-32 lg:pt-44">
+			<div data-reveal>
+				<p class="eyebrow mb-6 text-cyan-300">Educación inclusiva · Uruguay y LATAM</p>
+				<h1 class="font-display text-[2.6rem] font-semibold leading-[1.04] sm:text-6xl xl:text-[4.4rem]">
+					Transformamos centros educativos en
+					<span class="text-gradient italic">comunidades reales.</span>
+				</h1>
+				<p class="mt-7 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">
+					Donde estudiantes, docentes y familias dialogan, son atendidos y se
+					desarrollan. Acompañamos ese proceso con conocimiento, herramientas y
+					presencia real dentro de las instituciones.
+				</p>
+				<div class="mt-10 flex flex-col gap-3 sm:flex-row">
+					<Button href="/contacto" variant="light" arrow>Agendá una llamada</Button>
+					<a href="#ecosistema" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:border-white/50 hover:bg-white/5">
+						Conocé el ecosistema
+					</a>
+				</div>
+			</div>
+
+			<!-- hero visual -->
+			<div class="relative mx-auto hidden w-full max-w-md lg:block" data-reveal style="--reveal-delay:160ms">
+				<div class="relative aspect-square rounded-[2.5rem] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-sm">
+					<div class="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10"></div>
+					<Arch class="relative mx-auto mt-6 h-40 w-full animate-float-slow" />
+					<div class="relative mt-10 space-y-3">
+						{["Estudiantes", "Docentes", "Familias"].map((t, i) => (
+							<div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-3.5">
+								<span class={`h-2.5 w-2.5 rounded-full ${["bg-cyan-400","bg-iris-400","bg-violet-400"][i]}`}></span>
+								<span class="font-medium text-white/85">{t}</span>
+								<span class="ml-auto text-sm text-white/40">en diálogo</span>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ QUIÉNES SOMOS ============ -->
+	<section class="bg-white py-24 md:py-32">
+		<div class="mx-auto max-w-7xl px-5 sm:px-8">
+			<div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+				<div data-reveal>
+					<p class="eyebrow mb-6 text-violet-600">Quiénes somos</p>
+					<h2 class="font-display text-3xl text-ink-900 sm:text-4xl md:text-[2.9rem]">
+						Consultora, capacitadora y proveedora de una plataforma
+						psicopedagógica especializada en
+						<span class="text-gradient">educación inclusiva.</span>
+					</h2>
+				</div>
+				<div class="flex flex-col justify-center gap-7 text-lg leading-relaxed text-ink-600" data-reveal style="--reveal-delay:120ms">
+					<p>
+						Trabajamos con centros educativos, equipos docentes, profesionales
+						independientes y clínicas para transformar la manera en que las
+						instituciones atienden la diversidad de quienes las habitan.
+					</p>
+					<blockquote class="border-l-2 border-violet-400 pl-6 font-display text-xl italic text-ink-800 sm:text-2xl">
+						“Un centro educativo no es solo un espacio de instrucción: es —o puede
+						ser— una comunidad donde el diálogo es genuino y el desarrollo personal,
+						una realidad cotidiana.”
+					</blockquote>
+				</div>
+			</div>
+
+			<!-- misión / visión -->
+			<div class="mt-20 grid gap-5 md:grid-cols-2">
+				<div class="rounded-4xl border border-ink-100 bg-lavender-50 p-8 sm:p-10" data-reveal>
+					<h3 class="eyebrow mb-4 text-cyan-600">Misión</h3>
+					<p class="text-lg leading-relaxed text-ink-700">
+						Transformar centros educativos en comunidades donde estudiantes,
+						docentes y familias dialoguen de forma genuina, sus necesidades sean
+						atendidas y cada persona encuentre las condiciones para su desarrollo.
+					</p>
+				</div>
+				<div class="rounded-4xl border border-ink-100 bg-lavender-50 p-8 sm:p-10" data-reveal style="--reveal-delay:120ms">
+					<h3 class="eyebrow mb-4 text-violet-600">Visión</h3>
+					<p class="text-lg leading-relaxed text-ink-700">
+						Ser la organización de referencia en América Latina para quienes quieren
+						que su institución sea algo más que un espacio de instrucción: una
+						comunidad viva.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ ECOSISTEMA / TRES PILARES ============ -->
+	<section id="ecosistema" class="relative overflow-hidden bg-lavender-100 py-24 md:py-32">
+		<div class="mx-auto max-w-7xl px-5 sm:px-8">
+			<div class="max-w-3xl" data-reveal>
+				<p class="eyebrow mb-6 text-violet-600">La propuesta</p>
+				<h2 class="font-display text-4xl text-ink-900 sm:text-5xl md:text-[3.4rem]">
+					Un ecosistema de tres pilares
+				</h2>
+				<p class="mt-6 text-lg leading-relaxed text-ink-600">
+					No ofrecemos una solución aislada. La capacitación forma a las personas,
+					la consultoría transforma a las instituciones y la plataforma sostiene en
+					el tiempo lo que el conocimiento construye.
+				</p>
+			</div>
+
+			<div class="mt-16 grid gap-5 md:grid-cols-3">
+				{pillars.map((p, i) => (
+					<a
+						href={p.href}
+						class="group relative flex flex-col rounded-4xl bg-ink-900 p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift sm:p-9"
+						data-reveal
+						style={`--reveal-delay:${i * 110}ms`}
+					>
+						<div class="mb-8 flex items-center justify-between">
+							<span class="font-display text-5xl text-white/15">{p.n}</span>
+							<span class={`eyebrow rounded-full px-3 py-1 text-[0.62rem] ring-1 ${p.tagClass}`}>{p.tag}</span>
+						</div>
+						<p class="eyebrow mb-2 text-cyan-300">{p.name}</p>
+						<h3 class="font-display text-2xl leading-snug">{p.title}</h3>
+						<p class="mt-4 flex-1 text-white/65">{p.body}</p>
+						<span class="mt-7 inline-flex items-center gap-2 font-semibold text-white transition-colors group-hover:text-cyan-300">
+							Ver más
+							<svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+						</span>
+					</a>
+				))}
+			</div>
+
+			<!-- flow -->
+			<div class="mt-12 flex flex-col items-center gap-4 rounded-4xl border border-ink-100 bg-white/70 px-6 py-7 text-center sm:flex-row sm:justify-center sm:gap-6 sm:text-left" data-reveal>
+				<p class="text-ink-600">
+					Un centro puede entrar por cualquiera de los tres y encontrar valor en los demás:
+				</p>
+				<div class="flex items-center gap-3 font-display text-lg text-ink-900">
+					<span>Capacitación</span>
+					<span class="text-violet-400">→</span>
+					<span>Consultoría</span>
+					<span class="text-violet-400">→</span>
+					<span>Plataforma</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ VALORES (dark) ============ -->
+	<section class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
+		<div class="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-violet-600/15 blur-[110px]"></div>
+		<div class="relative mx-auto max-w-7xl px-5 sm:px-8">
+			<div class="max-w-2xl" data-reveal>
+				<p class="eyebrow mb-6 text-cyan-300">Cómo trabajamos</p>
+				<h2 class="font-display text-4xl sm:text-5xl">Seis convicciones que guían cada proyecto</h2>
+			</div>
+			<div class="mt-16 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+				{valores.map(([name, meaning], i) => (
+					<div class="border-t border-white/15 pt-6" data-reveal style={`--reveal-delay:${(i % 3) * 90}ms`}>
+						<h3 class="font-display text-xl text-white">{name}</h3>
+						<p class="mt-3 text-white/65">{meaning}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ MARCELA ============ -->
+	<section class="bg-white py-24 md:py-32">
+		<div class="mx-auto max-w-7xl px-5 sm:px-8">
+			<div class="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+				<!-- portrait placeholder -->
+				<div class="relative mx-auto w-full max-w-sm" data-reveal>
+					<div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-gradient-to-br from-ink-900 via-iris-800 to-violet-700">
+						<div class="absolute inset-0 opacity-30" style="background-image:radial-gradient(circle at 30% 20%, #00d5e7 0, transparent 45%);"></div>
+						<div class="absolute inset-0 flex items-center justify-center">
+							<span class="font-display text-[7rem] font-semibold text-white/90">MC</span>
+						</div>
+						<div class="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/10 px-5 py-3 backdrop-blur-sm">
+							<p class="font-semibold text-white">Marcela Cuenca</p>
+							<p class="text-sm text-white/70">Fundadora de +EDU</p>
+						</div>
+					</div>
+				</div>
+
+				<div data-reveal style="--reveal-delay:120ms">
+					<p class="eyebrow mb-6 text-violet-600">La persona detrás de +EDU</p>
+					<h2 class="font-display text-3xl text-ink-900 sm:text-4xl md:text-[2.9rem]">
+						No asesora desde afuera.
+						<span class="text-gradient">Asesora desde adentro.</span>
+					</h2>
+					<div class="mt-7 space-y-5 text-lg leading-relaxed text-ink-600">
+						<p>
+							Consultora en educación e innovación institucional con más de 15 años
+							de trayectoria. Docente, administradora, directora y consultora desde 2006.
+						</p>
+						<p>
+							Durante casi 15 años lideró BIOS Online, la unidad de e-learning del
+							grupo educativo BIOS. Hoy trabaja en tres centros educativos activos:
+							dirige la innovación pedagógica en BIOS, es docente en el Liceo Nuestra
+							Señora de Fátima y articula el equipo de bienestar estudiantil en
+							Escuela Integral.
+						</p>
+						<p class="text-base text-ink-500">
+							Formada en liderazgo educativo, KPI educativo, analítica del aprendizaje,
+							neuroeducación, metodologías ágiles y coaching educativo.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ PARA QUIÉN ============ -->
+	<section class="bg-lavender-100 py-24 md:py-32">
+		<div class="mx-auto max-w-7xl px-5 sm:px-8">
+			<div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end" data-reveal>
+				<div class="max-w-2xl">
+					<p class="eyebrow mb-6 text-violet-600">Para quién trabajamos</p>
+					<h2 class="font-display text-4xl text-ink-900 sm:text-5xl">Pensado para tres realidades</h2>
+				</div>
+			</div>
+
+			<div class="mt-14 grid gap-5 md:grid-cols-3">
+				{audiencias.map(([t, d], i) => (
+					<div class="rounded-4xl border border-ink-100 bg-white p-8" data-reveal style={`--reveal-delay:${i * 110}ms`}>
+						<div class={`mb-6 h-1 w-12 rounded-full ${["bg-cyan-400","bg-iris-500","bg-violet-500"][i]}`}></div>
+						<h3 class="font-display text-2xl text-ink-900">{t}</h3>
+						<p class="mt-4 text-ink-600">{d}</p>
+					</div>
+				))}
+			</div>
+
+			<!-- market stat -->
+			<div class="mt-12 grid items-center gap-8 rounded-4xl bg-ink-900 p-9 text-white sm:p-12 lg:grid-cols-[auto_1fr]" data-reveal>
+				<p class="font-display text-6xl text-gradient sm:text-7xl">10–15%</p>
+				<p class="max-w-2xl text-lg leading-relaxed text-white/75">
+					de la población escolar tiene alguna dificultad específica de aprendizaje
+					—y una proporción importante no tiene diagnóstico. La demanda de detección
+					y adecuación es real, creciente y subatendida.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ CTA ============ -->
+	<section class="relative overflow-hidden bg-gradient-to-br from-iris-700 via-violet-700 to-violet-800 py-24 text-white md:py-32">
+		<div class="pointer-events-none absolute -left-10 top-0 h-72 w-72 rounded-full bg-cyan-400/20 blur-[100px]"></div>
+		<div class="relative mx-auto max-w-3xl px-5 text-center sm:px-8" data-reveal>
+			<Arch class="mx-auto mb-8 h-16 w-auto" />
+			<h2 class="font-display text-4xl sm:text-5xl md:text-[3.4rem]">
+				El primer paso es una conversación de 30 minutos
+			</h2>
+			<p class="mx-auto mt-6 max-w-xl text-lg text-white/80">
+				No hace falta tener todo claro para hablar. Empezamos por entender la
+				situación de tu institución y ver si +EDU puede acompañarte.
+			</p>
+			<div class="mt-10 flex justify-center">
+				<Button href="/contacto" variant="light" arrow>Agendá tu llamada</Button>
+			</div>
+		</div>
+	</section>
+</Layout>

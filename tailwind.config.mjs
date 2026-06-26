@@ -4,73 +4,109 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				'sans': ['Inter', 'Poppins', 'system-ui', '-apple-system', 'sans-serif'],
-				'display': ['Poppins', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+				// Editorial serif display + warm humanist grotesk body
+				'display': ['Fraunces', 'Georgia', 'serif'],
+				'sans': ['"Hanken Grotesk"', 'system-ui', '-apple-system', 'sans-serif'],
 			},
 			colors: {
-				'edu-blue': {
-					50: '#eff6ff',
-					100: '#dbeafe',
-					200: '#bfdbfe',
-					300: '#93c5fd',
-					400: '#60a5fa',
-					500: '#3b82f6',
-					600: '#2563eb',
-					700: '#1d4ed8',
-					800: '#1e40af',
-					900: '#1e3a8a',
+				// Deep indigo — the brand's dark base (logo background #120E31)
+				'ink': {
+					50: '#f5f4fb',
+					100: '#eae8f6',
+					200: '#d2cdea',
+					300: '#aaa1d6',
+					400: '#7c6fbd',
+					500: '#574aa1',
+					600: '#423585',
+					700: '#312763',
+					800: '#1d1842',
+					900: '#120e31',
+					950: '#0a0820',
 				},
-				'edu-cyan': {
+				// Violet — primary accent (logo "+", right arc dot)
+				'violet': {
+					50: '#f5f1fe',
+					100: '#ebe3fd',
+					200: '#d8c9fb',
+					300: '#bda2f6',
+					400: '#a07cef',
+					500: '#8259e1',
+					600: '#6f3fd0',
+					700: '#5d30b0',
+					800: '#4e2c8f',
+					900: '#412874',
+					950: '#281553',
+				},
+				// Cyan — secondary accent (logo left arc, "CONSULTORA")
+				'cyan': {
 					50: '#ecfeff',
-					100: '#cffafe',
-					200: '#a5f3fc',
-					300: '#67e8f9',
-					400: '#22d3ee',
-					500: '#06b6d4',
-					600: '#0891b2',
-					700: '#0e7490',
-					800: '#155e75',
-					900: '#164e63',
-				}
+					100: '#cef9ff',
+					200: '#a2f1fb',
+					300: '#64e6f6',
+					400: '#1fd5ea',
+					500: '#00d5e7',
+					600: '#0299ad',
+					700: '#0b7a8c',
+					800: '#136274',
+					900: '#145163',
+					950: '#073640',
+				},
+				// Iris — periwinkle indigo (gradient middle, mid arc)
+				'iris': {
+					50: '#eef0fe',
+					100: '#e0e3fd',
+					200: '#c8cafb',
+					300: '#a6a8f6',
+					400: '#8482ef',
+					500: '#6a60e6',
+					600: '#5848d8',
+					700: '#4838bd',
+					800: '#3b3198',
+					900: '#342e79',
+					950: '#1f1a48',
+				},
+				// Lavender — soft light surface tint
+				'lavender': {
+					50: '#faf9fe',
+					100: '#f2f0fb',
+					200: '#ebe9f7',
+					300: '#ddd9f0',
+					400: '#c7c0e6',
+				},
+			},
+			borderRadius: {
+				'4xl': '2rem',
+				'5xl': '2.5rem',
+			},
+			boxShadow: {
+				'soft': '0 2px 8px -2px rgba(18, 14, 49, 0.06), 0 12px 32px -12px rgba(18, 14, 49, 0.12)',
+				'lift': '0 8px 24px -6px rgba(18, 14, 49, 0.12), 0 24px 56px -16px rgba(18, 14, 49, 0.18)',
+				'glow-violet': '0 16px 48px -12px rgba(130, 89, 225, 0.5)',
 			},
 			animation: {
-				'fade-in': 'fadeIn 0.6s ease-in-out',
-				'fade-in-up': 'fadeInUp 0.8s ease-out',
-				'slide-up': 'slideUp 0.8s ease-out',
-				'float': 'float 3s ease-in-out infinite',
-				'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-				'glow': 'glow 2s ease-in-out infinite alternate',
-				'gradient-shift': 'gradientShift 3s ease-in-out infinite',
+				'fade-up': 'fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+				'fade-in': 'fadeIn 0.8s ease-out forwards',
+				'float-slow': 'floatSlow 9s ease-in-out infinite',
+				'draw': 'draw 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards',
 			},
 			keyframes: {
+				fadeUp: {
+					'0%': { opacity: '0', transform: 'translateY(24px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' },
+				},
 				fadeIn: {
-					'0%': { opacity: '0', transform: 'translateY(20px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' },
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
 				},
-				fadeInUp: {
-					'0%': { opacity: '0', transform: 'translateY(30px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' },
-				},
-				slideUp: {
-					'0%': { opacity: '0', transform: 'translateY(40px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' },
-				},
-				float: {
+				floatSlow: {
 					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' },
+					'50%': { transform: 'translateY(-18px)' },
 				},
-				glow: {
-					'0%': { textShadow: '0 0 5px rgba(96, 165, 250, 0.5), 0 0 10px rgba(59, 130, 246, 0.3), 0 0 15px rgba(37, 99, 235, 0.2)' },
-					'100%': { textShadow: '0 0 10px rgba(96, 165, 250, 0.8), 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(37, 99, 235, 0.4)' },
+				draw: {
+					'0%': { 'stroke-dashoffset': '1' },
+					'100%': { 'stroke-dashoffset': '0' },
 				},
-				gradientShift: {
-					'0%, 100%': { backgroundPosition: '0% 50%' },
-					'50%': { backgroundPosition: '100% 50%' },
-				}
 			},
-			backdropBlur: {
-				xs: '2px',
-			}
 		},
 	},
 	plugins: [],
