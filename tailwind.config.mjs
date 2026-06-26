@@ -88,7 +88,7 @@ export default {
 				'fade-in': 'fadeIn 0.8s ease-out forwards',
 				'float-slow': 'floatSlow 9s ease-in-out infinite',
 				'draw': 'draw 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards',
-				'scroll-hint': 'scrollHint 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+				'scroll-bob': 'scrollBob 1.8s ease-in-out infinite',
 			},
 			keyframes: {
 				fadeUp: {
@@ -107,11 +107,9 @@ export default {
 					'0%': { 'stroke-dashoffset': '1' },
 					'100%': { 'stroke-dashoffset': '0' },
 				},
-				scrollHint: {
-					'0%': { transform: 'translateY(-12px)', opacity: '0' },
-					'35%': { opacity: '1' },
-					'70%': { opacity: '1' },
-					'100%': { transform: 'translateY(40px)', opacity: '0' },
+				scrollBob: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(5px)' },
 				},
 			},
 		},

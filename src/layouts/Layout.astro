@@ -36,6 +36,18 @@ const {
 		</main>
 		<Footer />
 
+		<!-- Persistent, subtle scroll hint -->
+		<a
+			id="scroll-hint"
+			href="#"
+			aria-label="Desplazar hacia abajo"
+			class="fixed bottom-6 left-1/2 z-30 -translate-x-1/2 opacity-0 pointer-events-none transition-opacity duration-500"
+		>
+			<span class="flex h-11 w-11 items-center justify-center rounded-full bg-ink-900/55 text-white/85 shadow-soft ring-1 ring-white/15 backdrop-blur-md">
+				<svg class="h-5 w-5 animate-scroll-bob" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"></path></svg>
+			</span>
+		</a>
+
 		<style is:global>
 			:root {
 				--header-h: 5rem;
@@ -146,6 +158,31 @@ const {
 					{ rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
 				);
 				els.forEach((el) => io.observe(el));
+			}
+
+			// Persistent scroll hint: visible while there's more below, hidden near the bottom
+			const hint = document.getElementById("scroll-hint");
+			if (hint) {
+				const update = () => {
+					const doc = document.documentElement;
+					const scrollable = doc.scrollHeight - window.innerHeight > 140;
+					const nearBottom =
+						window.scrollY + window.innerHeight >= doc.scrollHeight - 140;
+					const show = scrollable && !nearBottom;
+					hint.style.opacity = show ? "1" : "0";
+					hint.style.pointerEvents = show ? "auto" : "none";
+				};
+				window.addEventListener("scroll", update, { passive: true });
+				window.addEventListener("resize", update);
+				window.addEventListener("load", update);
+				update();
+				hint.addEventListener("click", (e) => {
+					e.preventDefault();
+					window.scrollBy({
+						top: Math.round(window.innerHeight * 0.85),
+						behavior: "smooth",
+					});
+				});
 			}
 		</script>
 	</body>
