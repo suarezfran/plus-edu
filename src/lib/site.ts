@@ -19,5 +19,5 @@ export const contact = {
 	instagram: "@maseducacion.global",
 	instagramHref: "https://instagram.com/maseducacion.global",
 	linkedin: "Marcela Cuenca",
-	linkedinHref: "https://www.linkedin.com/search/results/people/?keywords=Marcela%20Cuenca",
+	linkedinHref: "https://www.linkedin.com/in/marcela-cuencap/",
 };
