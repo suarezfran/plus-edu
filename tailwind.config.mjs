@@ -4,8 +4,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				// Editorial serif display + warm humanist grotesk body
-				'display': ['Fraunces', 'Georgia', 'serif'],
+				// High-contrast editorial serif display (matches the +EDU deck) + humanist grotesk body
+				'display': ['"Playfair Display"', 'Georgia', 'serif'],
 				'sans': ['"Hanken Grotesk"', 'system-ui', '-apple-system', 'sans-serif'],
 			},
 			colors: {

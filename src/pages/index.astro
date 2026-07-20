@@ -5,38 +5,41 @@ import Button from "../components/Button.astro";
 import { contact } from "../lib/site.ts";
 
 const stats = [
-	["+20 años", "en educación"],
+	["+20", "años en educación"],
 	["3", "centros activos"],
-	["6", "capacitaciones"],
+	["6", "líneas de capacitación"],
 	["LATAM", "Uruguay y la región"],
 ];
 
 const pillars = [
 	{
-		n: "01",
 		name: "Capacitación",
-		tag: "Disponible hoy",
-		tagClass: "text-cyan-300 ring-cyan-400/30",
+		bar: "bg-cyan-400",
+		nameColor: "text-cyan-600",
+		status: "Disponible hoy",
+		statusClass: "bg-cyan-50 text-cyan-700",
 		title: "Formación docente y de equipos",
 		body: "Cuatro líneas formativas —in-house o abiertas— para equipos docentes, directivos, estudiantes y familias.",
 		items: ["Innovación Pedagógica", "Bullying y Convivencia", "Manejo de Aula", "IA en Educación"],
 		href: "#capacitaciones",
 	},
 	{
-		n: "02",
 		name: "Consultoría",
-		tag: "Disponible hoy",
-		tagClass: "text-cyan-300 ring-cyan-400/30",
+		bar: "bg-violet-500",
+		nameColor: "text-violet-600",
+		status: "Disponible hoy",
+		statusClass: "bg-violet-50 text-violet-700",
 		title: "Acompañamiento institucional",
 		body: "Diagnóstico, acompañamiento de equipos directivos y diseño de procesos para centros que buscan una transformación real.",
 		items: ["Diagnóstico Institucional", "Equipos Directivos", "Diseño de Inducción", "Implementación plataforma"],
 		href: "#consultoria",
 	},
 	{
-		n: "03",
 		name: "+EduMap",
-		tag: "En desarrollo",
-		tagClass: "text-violet-300 ring-violet-400/30",
+		bar: "bg-gradient-to-r from-cyan-400 to-violet-500",
+		nameColor: "text-iris-600",
+		status: "En desarrollo",
+		statusClass: "bg-lavender-200 text-iris-700",
 		title: "Plataforma psicopedagógica",
 		body: "Sistema SaaS de despistaje, perfiles, adecuaciones curriculares, derivación y seguimiento longitudinal.",
 		items: ["Despistaje grupal", "Adecuación curricular", "Derivación profesional", "Seguimiento longitudinal"],
@@ -45,28 +48,34 @@ const pillars = [
 ];
 
 const valores = [
-	["Personalización", "Diagnósticos previos, planes a medida y adecuaciones configurables para cada institución."],
-	["Accesibilidad del conocimiento", "El saber especializado no puede quedar reservado a pocos. Guías prácticas e interfaz intuitiva."],
-	["Rigor basado en evidencia", "Instrumentos validados, marcos DUA y RTI, fuentes académicas citadas."],
-	["Compromiso con la inclusión", "Herramientas para técnicos, docentes y familias, articuladas en un mismo ecosistema."],
-	["Puente diagnóstico–acción", "La plataforma traduce perfiles clínicos en recomendaciones concretas para el aula."],
-	["Desde adentro", "Asesoramos desde la experiencia real de gestionar instituciones educativas activas."],
+	{ dot: "bg-cyan-400", t: "Personalización", d: "Diagnósticos previos, planes a medida y adecuaciones configurables para cada institución." },
+	{ dot: "bg-violet-500", t: "Accesibilidad del conocimiento", d: "El saber especializado no puede quedar reservado a pocos. Guías prácticas e interfaz intuitiva." },
+	{ dot: "bg-cyan-400", t: "Rigor basado en evidencia", d: "Instrumentos validados, marcos DUA y RTI, fuentes académicas citadas." },
+	{ dot: "bg-violet-500", t: "Compromiso con la inclusión", d: "Herramientas para técnicos, docentes y familias, articuladas en un mismo ecosistema." },
+	{ dot: "bg-cyan-400", t: "Puente diagnóstico–acción", d: "La plataforma traduce perfiles clínicos en recomendaciones concretas para el aula." },
+	{ dot: "bg-violet-500", t: "Desde adentro", d: "Asesoramos desde la experiencia real de gestionar instituciones educativas activas." },
+];
+
+const marcelaHitos = [
+	{ k: "Desde 2006", d: "Docente, administradora, directora y consultora en educación." },
+	{ k: "Casi 15 años", d: "Lideró BIOS Online, la unidad de e-learning del grupo educativo BIOS: plataformas de aprendizaje, propuestas digitales y gestión de equipos." },
+	{ k: "Hoy", d: "Dirige la innovación pedagógica en BIOS, es docente en el Liceo Nuestra Señora de Fátima y la Escuela Integral, y articula el bienestar estudiantil del Colegio Fátima." },
 ];
 
 const capacitaciones = [
-	{ n: "1", t: "Innovación Pedagógica", p: "Equipos docentes y coordinadores", dur: "4 hs o 3 sesiones", accent: "cyan" },
-	{ n: "2", t: "Bullying y Convivencia Escolar", p: "Docentes, bienestar, directivos", dur: "6 hs o 4 sesiones", accent: "violet" },
-	{ n: "3", t: "Manejo de Aula", p: "Docentes de todos los niveles", dur: "3 sesiones o jornada 6 hs", accent: "cyan" },
-	{ n: "4A", t: "IA en Educación — Docentes", p: "Docentes de todos los niveles", dur: "3 sesiones de 2 hs", accent: "violet" },
-	{ n: "4B", t: "IA en Educación — Estudiantes", p: "Bachillerato (15–18 años)", dur: "2 sesiones de 2 hs", accent: "cyan" },
-	{ n: "4C", t: "IA en Educación — Familias", p: "Padres, madres y familias", dur: "Charla-taller 2 hs", accent: "violet" },
+	{ n: "1", t: "Innovación Pedagógica", p: "Equipos docentes y coordinadores", dur: "4 hs o 3 sesiones", grad: "from-cyan-400 to-iris-500" },
+	{ n: "2", t: "Bullying y Convivencia Escolar", p: "Docentes, bienestar, directivos", dur: "6 hs o 4 sesiones", grad: "from-iris-500 to-violet-500" },
+	{ n: "3", t: "Manejo de Aula", p: "Docentes de todos los niveles", dur: "3 sesiones o jornada 6 hs", grad: "from-cyan-400 to-iris-500" },
+	{ n: "4A", t: "IA en Educación — Docentes", p: "Docentes de todos los niveles", dur: "3 sesiones de 2 hs", grad: "from-iris-500 to-violet-500" },
+	{ n: "4B", t: "IA en Educación — Estudiantes", p: "Bachillerato (15–18 años)", dur: "2 sesiones de 2 hs", grad: "from-cyan-400 to-iris-500" },
+	{ n: "4C", t: "IA en Educación — Familias", p: "Padres, madres y familias", dur: "Charla-taller 2 hs", grad: "from-iris-500 to-violet-500" },
 ];
 
 const servicios = [
-	{ tag: "Puerta de entrada", t: "Diagnóstico Institucional", d: "Relevamiento del clima organizacional, los vínculos entre actores y los procesos de liderazgo.", meta: "Entregable: mapa de situación + ejes de mejora priorizados · 4 a 6 semanas" },
-	{ tag: "Servicio principal", t: "Acompañamiento de Equipos Directivos", d: "Proceso de desarrollo de liderazgo educativo: cultura institucional, gestión de equipos y toma de decisiones.", meta: "3 a 6 meses · Talleres + sesiones de seguimiento" },
-	{ tag: "Servicio principal", t: "Diseño de Procesos de Inducción", d: "Para instituciones que incorporan personas nuevas y necesitan un proceso efectivo, reproducible y coherente.", meta: "Entregable documentado listo para implementar · Proyecto cerrado" },
-	{ tag: "Complementario", t: "Implementación de +EduMap", d: "Acompañamiento especializado para centros y clínicas que adopten la plataforma.", meta: "Incluido en planes Estándar y Premium de +EduMap" },
+	{ tag: "Puerta de entrada", tagClass: "bg-cyan-50 text-cyan-700", t: "Diagnóstico Institucional", d: "Relevamiento del clima organizacional, los vínculos entre actores y los procesos de liderazgo.", meta: "Entregable: mapa de situación + ejes de mejora priorizados · 4 a 6 semanas" },
+	{ tag: "Servicio principal", tagClass: "bg-violet-50 text-violet-700", t: "Acompañamiento de Equipos Directivos", d: "Proceso de desarrollo de liderazgo educativo: cultura institucional, gestión de equipos y toma de decisiones.", meta: "3 a 6 meses · Talleres + sesiones de seguimiento" },
+	{ tag: "Servicio principal", tagClass: "bg-cyan-50 text-cyan-700", t: "Diseño de Procesos de Inducción", d: "Para instituciones que incorporan personas nuevas y necesitan un proceso efectivo, reproducible y coherente.", meta: "Entregable documentado listo para implementar · Proyecto cerrado" },
+	{ tag: "Complementario", tagClass: "bg-violet-50 text-violet-700", t: "Implementación de +EduMap", d: "Acompañamiento especializado para centros y clínicas que adopten la plataforma.", meta: "Incluido en planes Estándar y Premium de +EduMap" },
 ];
 
 const eduMod1 = [
@@ -94,234 +103,213 @@ const audiencia = [
 	title="+EDU Consultora — Transformamos centros educativos en comunidades reales"
 	description="+EDU transforma centros educativos en comunidades reales mediante capacitación docente, consultoría institucional y la plataforma psicopedagógica +EduMap. Uruguay y LATAM."
 >
-	<!-- ============ HERO ============ -->
+	<!-- ============ 1 · HERO ============ -->
 	<section id="top" class="relative overflow-hidden bg-ink-900 text-white">
 		<div class="pointer-events-none absolute inset-0">
 			<div class="absolute -left-32 top-10 h-[32rem] w-[32rem] rounded-full bg-iris-600/25 blur-[120px]"></div>
 			<div class="absolute right-0 top-1/3 h-[28rem] w-[28rem] rounded-full bg-cyan-500/15 blur-[120px]"></div>
-			<div class="absolute -bottom-20 left-1/3 h-[26rem] w-[26rem] rounded-full bg-violet-600/20 blur-[120px]"></div>
 		</div>
 		<div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:64px 64px;"></div>
+		<!-- large ghosted brand mark -->
+		<Arch class="pointer-events-none absolute -right-16 top-24 hidden h-[26rem] w-auto opacity-[0.07] lg:block" />
 
-		<div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 pt-36 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:pb-20 lg:pt-44">
-			<div data-reveal>
-				<p class="eyebrow mb-6 text-cyan-300">Presentación de la propuesta</p>
-				<h1 class="font-display text-[2.6rem] font-semibold leading-[1.04] sm:text-6xl xl:text-[4.4rem]">
-					Transformamos centros educativos en
-					<span class="text-gradient italic">comunidades reales.</span>
-				</h1>
-				<p class="mt-7 max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">
-					Donde estudiantes, docentes y familias dialogan, son atendidos y se
-					desarrollan.
-				</p>
-				<div class="mt-10 flex flex-col gap-3 sm:flex-row">
-					<Button href={contact.whatsappCtaHref} variant="light" arrow>Conversemos 30 minutos</Button>
-					<a href="#ecosistema" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:border-white/50 hover:bg-white/5">
-						Conocé el ecosistema
-					</a>
-				</div>
+		<div class="relative mx-auto max-w-6xl px-5 pt-40 pb-16 sm:px-8 lg:pt-48">
+			<p class="eyebrow mb-8 text-cyan-300" data-reveal>Presentación de la propuesta</p>
+			<h1 class="max-w-4xl font-display text-[2.9rem] font-bold leading-[1.05] sm:text-6xl xl:text-[4.6rem]" data-reveal style="--reveal-delay:80ms">
+				Transformamos centros educativos en
+				<span class="text-gradient italic">comunidades reales.</span>
+			</h1>
+			<p class="mt-8 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl" data-reveal style="--reveal-delay:160ms">
+				Donde estudiantes, docentes y familias dialogan, son atendidos y se
+				desarrollan.
+			</p>
+			<div class="mt-10 flex flex-col gap-3 sm:flex-row" data-reveal style="--reveal-delay:240ms">
+				<Button href={contact.whatsappCtaHref} variant="light" arrow>Conversemos 30 minutos</Button>
+				<a href="#ecosistema" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:border-white/50 hover:bg-white/5">
+					Conocé el ecosistema
+				</a>
 			</div>
 
-			<div class="relative mx-auto hidden w-full max-w-md lg:block" data-reveal style="--reveal-delay:160ms">
-				<div class="relative aspect-square rounded-[2.5rem] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-sm">
-					<div class="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10"></div>
-					<Arch class="relative mx-auto mt-6 h-40 w-full animate-float-slow" />
-					<div class="relative mt-10 space-y-3">
-						{["Estudiantes", "Docentes", "Familias"].map((t, i) => (
-							<div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-3.5">
-								<span class={`h-2.5 w-2.5 rounded-full ${["bg-cyan-400","bg-iris-400","bg-violet-400"][i]}`}></span>
-								<span class="font-medium text-white/85">{t}</span>
-								<span class="ml-auto text-sm text-white/40">en diálogo</span>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- stats band -->
-		<div class="relative mx-auto max-w-7xl px-5 pb-20 sm:px-8" data-reveal style="--reveal-delay:220ms">
-			<div class="grid grid-cols-2 gap-6 border-t border-white/10 pt-10 md:grid-cols-4">
+			<div class="mt-16 grid grid-cols-2 gap-6 border-t border-white/10 pt-10 md:grid-cols-4" data-reveal style="--reveal-delay:320ms">
 				{stats.map(([v, l]) => (
 					<div>
-						<div class="font-display text-3xl text-gradient sm:text-4xl">{v}</div>
-						<div class="mt-1 text-sm text-white/60">{l}</div>
+						<div class="font-display text-4xl font-bold text-gradient sm:text-5xl">{v}</div>
+						<div class="mt-1.5 text-sm text-white/55">{l}</div>
 					</div>
 				))}
 			</div>
 		</div>
 	</section>
 
-	<!-- ============ QUIÉNES SOMOS ============ -->
+	<!-- ============ 2 · QUIÉNES SOMOS (split) ============ -->
 	<section id="quienes" class="bg-white py-24 md:py-32">
-		<div class="mx-auto max-w-7xl px-5 sm:px-8">
-			<div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-				<div data-reveal>
-					<p class="eyebrow mb-6 text-violet-600">Quiénes somos</p>
-					<h2 class="font-display text-3xl text-ink-900 sm:text-4xl md:text-[2.9rem]">
-						Consultora, capacitadora y proveedora de una plataforma
-						psicopedagógica <span class="text-gradient">especializada en educación.</span>
-					</h2>
-				</div>
-				<div class="flex flex-col justify-center gap-7 text-lg leading-relaxed text-ink-600" data-reveal style="--reveal-delay:120ms">
-					<p>
-						Transformamos la manera en que las instituciones educativas dialogan,
-						atienden a su comunidad y crean las condiciones para que cada persona
-						se desarrolle.
-					</p>
-					<blockquote class="border-l-2 border-violet-400 pl-6 font-display text-xl italic text-ink-800 sm:text-2xl">
-						“Un centro educativo no es solo un espacio de instrucción: es —o puede
-						ser— una comunidad donde el diálogo es genuino y el desarrollo personal,
-						una realidad cotidiana.”
-					</blockquote>
+		<div class="mx-auto grid max-w-6xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
+			<!-- dark left panel -->
+			<div class="relative flex min-h-[22rem] flex-col justify-between overflow-hidden rounded-4xl bg-ink-900 p-10 text-white" data-reveal>
+				<div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-violet-600/25 blur-[90px]"></div>
+				<h2 class="relative font-display text-4xl leading-tight sm:text-5xl">¿Quiénes<br />Somos?</h2>
+				<div class="relative mt-8 flex gap-3">
+					<span class="h-5 w-5 rounded-full bg-cyan-400"></span>
+					<span class="h-5 w-5 rounded-full bg-violet-500"></span>
 				</div>
 			</div>
 
-			<div class="mt-20 grid gap-5 md:grid-cols-2">
-				<div class="rounded-4xl border border-ink-100 bg-lavender-50 p-8 sm:p-10" data-reveal>
-					<h3 class="eyebrow mb-4 text-cyan-600">Misión</h3>
-					<p class="text-lg leading-relaxed text-ink-700">
-						Transformar centros educativos en comunidades donde estudiantes,
-						docentes y familias dialoguen de forma genuina, sus necesidades sean
-						atendidas y cada persona encuentre las condiciones para su desarrollo
-						personal.
-					</p>
-				</div>
-				<div class="rounded-4xl border border-ink-100 bg-lavender-50 p-8 sm:p-10" data-reveal style="--reveal-delay:120ms">
-					<h3 class="eyebrow mb-4 text-violet-600">Visión</h3>
-					<p class="text-lg leading-relaxed text-ink-700">
-						Ser la organización de referencia en América Latina para quienes quieren
-						que su institución educativa sea una comunidad donde el diálogo es
-						genuino, las necesidades tienen respuesta y el desarrollo personal es
-						una realidad cotidiana.
-					</p>
+			<!-- right content -->
+			<div class="flex flex-col justify-center" data-reveal style="--reveal-delay:120ms">
+				<p class="text-xl leading-relaxed text-ink-700">
+					Consultora, capacitadora y proveedora de una plataforma psicopedagógica
+					<span class="text-gradient font-semibold">especializada en educación.</span>
+				</p>
+				<div class="mt-8 grid gap-4 sm:grid-cols-2">
+					<div class="rounded-3xl border border-ink-100 bg-lavender-50 p-7">
+						<h3 class="eyebrow mb-3 text-cyan-600">Misión</h3>
+						<p class="text-ink-700">
+							Transformar centros educativos en comunidades donde estudiantes,
+							docentes y familias dialoguen de forma genuina, sus necesidades sean
+							atendidas y cada persona encuentre las condiciones para su desarrollo
+							personal.
+						</p>
+					</div>
+					<div class="rounded-3xl border border-ink-100 bg-lavender-50 p-7">
+						<h3 class="eyebrow mb-3 text-violet-600">Visión</h3>
+						<p class="text-ink-700">
+							Ser la organización de referencia en América Latina para quienes
+							quieren que su institución educativa sea una comunidad donde el diálogo
+							es genuino, las necesidades tienen respuesta y el desarrollo personal
+							es una realidad cotidiana.
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- ============ ECOSISTEMA / TRES PILARES ============ -->
-	<section id="ecosistema" class="relative overflow-hidden bg-lavender-100 py-24 md:py-32">
-		<div class="mx-auto max-w-7xl px-5 sm:px-8">
+	<!-- ============ 3 · VALORES ============ -->
+	<section class="bg-lavender-100 py-24 md:py-32">
+		<div class="mx-auto max-w-6xl px-5 sm:px-8">
+			<h2 class="font-display text-4xl text-ink-900 sm:text-5xl" data-reveal>Nuestros valores</h2>
+			<div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+				{valores.map((v, i) => (
+					<div class="rounded-3xl bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift" data-reveal style={`--reveal-delay:${(i % 3) * 90}ms`}>
+						<span class={`inline-block h-3.5 w-3.5 rounded-full ${v.dot}`}></span>
+						<h3 class="mt-4 font-display text-xl text-ink-900">{v.t}</h3>
+						<p class="mt-2.5 text-ink-600">{v.d}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ 4 · MARCELA ============ -->
+	<section class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
+		<div class="pointer-events-none absolute -left-24 top-1/3 h-80 w-80 rounded-full bg-iris-600/20 blur-[120px]"></div>
+		<div class="relative mx-auto max-w-6xl px-5 sm:px-8">
+			<div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between" data-reveal>
+				<div>
+					<p class="eyebrow mb-5 text-cyan-300">La persona detrás de +EDU</p>
+					<h2 class="font-display text-4xl sm:text-6xl">Marcela Cuenca</h2>
+					<p class="mt-4 text-white/60">Fundadora de +EDU · Consultora en educación e innovación institucional · +20 años en educación</p>
+				</div>
+				<!-- TODO: reemplazar por la foto real de Marcela en /marcela.jpg -->
+				<div class="flex h-36 w-36 shrink-0 items-center justify-center rounded-3xl border border-white/10 bg-white/[0.04] text-sm text-white/30">Foto</div>
+			</div>
+
+			<div class="mt-14 space-y-9 border-l border-white/15 pl-8" data-reveal style="--reveal-delay:120ms">
+				{marcelaHitos.map((h) => (
+					<div class="relative">
+						<span class="absolute -left-[2.65rem] top-1.5 h-3.5 w-3.5 rounded-full bg-cyan-400 ring-4 ring-ink-900"></span>
+						<p class="font-display text-2xl text-cyan-300">{h.k}</p>
+						<p class="mt-2 max-w-3xl text-lg leading-relaxed text-white/80">{h.d}</p>
+					</div>
+				))}
+			</div>
+
+			<p class="mt-12 rounded-3xl border border-violet-400/40 bg-violet-500/10 px-8 py-6 text-center font-display text-xl italic text-white sm:text-2xl" data-reveal>
+				No asesora desde afuera. Asesora desde adentro.
+			</p>
+		</div>
+	</section>
+
+	<!-- ============ 5 · ECOSISTEMA / TRES PILARES ============ -->
+	<section id="ecosistema" class="bg-white py-24 md:py-32">
+		<div class="mx-auto max-w-6xl px-5 sm:px-8">
 			<div class="max-w-3xl" data-reveal>
-				<p class="eyebrow mb-6 text-violet-600">La propuesta</p>
-				<h2 class="font-display text-4xl text-ink-900 sm:text-5xl md:text-[3.4rem]">
-					Un ecosistema de tres pilares
-				</h2>
-				<p class="mt-6 text-lg leading-relaxed text-ink-600">
-					No ofrecemos una solución aislada. La capacitación forma a las personas,
-					la consultoría transforma a las instituciones y la plataforma sostiene en
-					el tiempo lo que el conocimiento construye.
+				<p class="eyebrow mb-5 text-violet-600">La propuesta</p>
+				<h2 class="font-display text-4xl text-ink-900 sm:text-5xl md:text-[3.4rem]">Un ecosistema de tres pilares</h2>
+				<p class="mt-5 text-lg leading-relaxed text-ink-600">
+					No ofrecemos una solución aislada. Ofrecemos un ecosistema donde tres
+					dimensiones se articulan y se refuerzan mutuamente.
 				</p>
 			</div>
 
-			<div class="mt-16 grid gap-5 md:grid-cols-3">
+			<div class="mt-14 grid gap-6 md:grid-cols-3">
 				{pillars.map((p, i) => (
-					<a
-						href={p.href}
-						class="group relative flex flex-col rounded-4xl bg-ink-900 p-8 text-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift sm:p-9"
-						data-reveal
-						style={`--reveal-delay:${i * 110}ms`}
-					>
-						<div class="mb-8 flex items-center justify-between">
-							<span class="font-display text-5xl text-white/15">{p.n}</span>
-							<span class={`eyebrow rounded-full px-3 py-1 text-[0.62rem] ring-1 ${p.tagClass}`}>{p.tag}</span>
+					<a href={p.href} class="group flex flex-col overflow-hidden rounded-4xl border border-ink-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift" data-reveal style={`--reveal-delay:${i * 110}ms`}>
+						<div class={`h-2.5 w-full ${p.bar}`}></div>
+						<div class="flex flex-1 flex-col p-8">
+							<div class="flex items-center justify-between">
+								<p class={`eyebrow ${p.nameColor}`}>{p.name}</p>
+								<span class={`rounded-full px-3 py-1 text-[0.62rem] font-bold uppercase tracking-widest ${p.statusClass}`}>{p.status}</span>
+							</div>
+							<h3 class="mt-4 font-display text-2xl text-ink-900">{p.title}</h3>
+							<p class="mt-3 text-ink-600">{p.body}</p>
+							<ul class="mt-5 flex-1 space-y-2 text-sm text-ink-700">
+								{p.items.map((it) => (<li class="flex gap-2"><span class="text-cyan-500">→</span>{it}</li>))}
+							</ul>
+							<span class="mt-6 inline-flex items-center gap-2 font-semibold text-violet-600 transition-colors group-hover:text-violet-700">
+								Ver más
+								<svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+							</span>
 						</div>
-						<p class="eyebrow mb-2 text-cyan-300">{p.name}</p>
-						<h3 class="font-display text-2xl leading-snug">{p.title}</h3>
-						<p class="mt-4 text-white/65">{p.body}</p>
-						<ul class="mt-5 flex-1 space-y-2 text-sm text-white/75">
-							{p.items.map((it) => (
-								<li class="flex gap-2"><span class="text-cyan-400">→</span>{it}</li>
-							))}
-						</ul>
-						<span class="mt-7 inline-flex items-center gap-2 font-semibold text-white transition-colors group-hover:text-cyan-300">
-							Ver más
-							<svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-						</span>
 					</a>
 				))}
 			</div>
 
-			<div class="mt-12 flex flex-col items-center gap-4 rounded-4xl border border-ink-100 bg-white/70 px-6 py-7 text-center sm:flex-row sm:justify-center sm:gap-6 sm:text-left" data-reveal>
-				<p class="text-ink-600">
-					Un centro puede entrar por cualquiera de los tres y encontrar valor en los demás:
-				</p>
+			<div class="mt-10 flex flex-col items-center gap-4 rounded-4xl border border-ink-100 bg-lavender-50 px-6 py-7 text-center sm:flex-row sm:justify-center sm:gap-6 sm:text-left" data-reveal>
+				<p class="text-ink-600">Un centro puede entrar por cualquiera de los tres y encontrar valor en los demás:</p>
 				<div class="flex items-center gap-3 font-display text-lg text-ink-900">
-					<span>Capacitación</span>
-					<span class="text-violet-400">→</span>
-					<span>Consultoría</span>
-					<span class="text-violet-400">→</span>
-					<span>Plataforma</span>
+					<span>Capacitación</span><span class="text-violet-400">→</span><span>Consultoría</span><span class="text-violet-400">→</span><span>Plataforma</span>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<!-- ============ VALORES (dark) ============ -->
-	<section class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
-		<div class="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-violet-600/15 blur-[110px]"></div>
-		<div class="relative mx-auto max-w-7xl px-5 sm:px-8">
-			<div class="max-w-2xl" data-reveal>
-				<p class="eyebrow mb-6 text-cyan-300">Nuestros valores</p>
-				<h2 class="font-display text-4xl sm:text-5xl">Seis convicciones que guían cada proyecto</h2>
-			</div>
-			<div class="mt-16 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-				{valores.map(([name, meaning], i) => (
-					<div class="border-t border-white/15 pt-6" data-reveal style={`--reveal-delay:${(i % 3) * 90}ms`}>
-						<span class={`mb-4 inline-block h-2.5 w-2.5 rounded-full ${i % 2 === 0 ? "bg-cyan-400" : "bg-violet-400"}`}></span>
-						<h3 class="font-display text-xl text-white">{name}</h3>
-						<p class="mt-3 text-white/65">{meaning}</p>
-					</div>
-				))}
-			</div>
-		</div>
-	</section>
-
-	<!-- ============ CAPACITACIONES ============ -->
-	<section id="capacitaciones" class="bg-white py-24 md:py-32">
-		<div class="mx-auto max-w-7xl px-5 sm:px-8">
+	<!-- ============ 6 · CAPACITACIONES ============ -->
+	<section id="capacitaciones" class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
+		<div class="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-cyan-500/12 blur-[120px]"></div>
+		<div class="relative mx-auto max-w-6xl px-5 sm:px-8">
 			<div class="max-w-3xl" data-reveal>
-				<p class="eyebrow mb-6 text-violet-600">Capacitación · Disponible hoy</p>
-				<h2 class="font-display text-4xl text-ink-900 sm:text-5xl">Programa de Capacitaciones</h2>
-				<p class="mt-6 text-lg leading-relaxed text-ink-600">
-					In-house en tu institución o jornadas abiertas. Cuatro líneas formativas
-					para equipos docentes, directivos, estudiantes y familias.
-				</p>
+				<h2 class="font-display text-4xl sm:text-5xl">Programa de Capacitaciones</h2>
+				<p class="mt-4 text-cyan-300">In-house en tu institución o jornadas abiertas · Disponibles ahora</p>
 			</div>
-
-			<div class="mt-14 space-y-3">
+			<div class="mt-12 space-y-3">
 				{capacitaciones.map((c, i) => (
-					<div class="flex flex-col gap-4 rounded-3xl border border-ink-100 bg-lavender-50 p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift sm:flex-row sm:items-center sm:justify-between" data-reveal style={`--reveal-delay:${(i % 3) * 80}ms`}>
+					<div class="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25 sm:flex-row sm:items-center sm:justify-between" data-reveal style={`--reveal-delay:${(i % 3) * 80}ms`}>
 						<div class="flex items-center gap-5">
-							<span class={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${c.accent === "cyan" ? "bg-gradient-to-br from-cyan-400 to-iris-500" : "bg-gradient-to-br from-iris-500 to-violet-500"}`}>{c.n}</span>
+							<span class={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${c.grad} text-sm font-bold text-white`}>{c.n}</span>
 							<div>
-								<h3 class="font-display text-xl text-ink-900">{c.t}</h3>
-								<p class="text-ink-500">{c.p}</p>
+								<h3 class="font-display text-xl">{c.t}</h3>
+								<p class="text-white/55">{c.p}</p>
 							</div>
 						</div>
-						<span class="self-start rounded-full border border-ink-200 px-4 py-1.5 text-sm font-medium text-ink-700 sm:self-auto">{c.dur}</span>
+						<span class="self-start rounded-full border border-cyan-400/30 px-4 py-1.5 text-sm text-cyan-200 sm:self-auto">{c.dur}</span>
 					</div>
 				))}
 			</div>
 		</div>
 	</section>
 
-	<!-- ============ CONSULTORÍA ============ -->
+	<!-- ============ 7 · CONSULTORÍA ============ -->
 	<section id="consultoria" class="bg-lavender-100 py-24 md:py-32">
-		<div class="mx-auto max-w-7xl px-5 sm:px-8">
+		<div class="mx-auto max-w-6xl px-5 sm:px-8">
 			<div class="max-w-3xl" data-reveal>
-				<p class="eyebrow mb-6 text-violet-600">Consultoría · Disponible hoy</p>
-				<h2 class="font-display text-4xl text-ink-900 sm:text-5xl">Acompañamiento institucional</h2>
-				<p class="mt-6 text-lg leading-relaxed text-ink-600">
-					Procesos con entregables concretos. Entrada gratuita: un diagnóstico de 30 minutos.
-				</p>
+				<h2 class="font-display text-4xl text-ink-900 sm:text-5xl">Consultoría</h2>
+				<p class="mt-4 text-lg text-ink-600">Acompañamiento institucional · Procesos con entregables concretos · Entrada gratuita: diagnóstico de 30 min</p>
 			</div>
-
-			<div class="mt-14 grid gap-5 md:grid-cols-2">
+			<div class="mt-12 grid gap-5 md:grid-cols-2">
 				{servicios.map((s, i) => (
-					<div class="flex flex-col rounded-4xl border border-ink-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift" data-reveal style={`--reveal-delay:${(i % 2) * 110}ms`}>
-						<span class="eyebrow self-start rounded-full bg-lavender-200 px-3 py-1 text-[0.62rem] text-violet-700">{s.tag}</span>
+					<div class="flex flex-col rounded-4xl bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift" data-reveal style={`--reveal-delay:${(i % 2) * 110}ms`}>
+						<span class={`self-start rounded-full px-3 py-1 text-[0.62rem] font-bold uppercase tracking-widest ${s.tagClass}`}>{s.tag}</span>
 						<h3 class="mt-4 font-display text-2xl text-ink-900">{s.t}</h3>
 						<p class="mt-3 flex-1 text-ink-600">{s.d}</p>
 						<p class="mt-5 border-t border-ink-100 pt-4 text-sm italic text-cyan-700">{s.meta}</p>
@@ -331,44 +319,46 @@ const audiencia = [
 		</div>
 	</section>
 
-	<!-- ============ +EDUMAP (dark) ============ -->
+	<!-- ============ 8 · +EDUMAP ============ -->
 	<section id="edumap" class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
-		<div class="pointer-events-none absolute -left-20 top-1/4 h-80 w-80 rounded-full bg-cyan-500/12 blur-[120px]"></div>
-		<div class="relative mx-auto max-w-7xl px-5 sm:px-8">
+		<div class="pointer-events-none absolute -left-20 top-1/4 h-80 w-80 rounded-full bg-violet-600/18 blur-[120px]"></div>
+		<div class="relative mx-auto max-w-6xl px-5 sm:px-8">
 			<div class="max-w-3xl" data-reveal>
-				<div class="mb-6 flex items-center gap-3">
-					<p class="eyebrow text-cyan-300">Plataforma</p>
-					<span class="eyebrow rounded-full px-3 py-1 text-[0.62rem] text-violet-300 ring-1 ring-violet-400/30">En desarrollo</span>
+				<div class="mb-4 flex items-center gap-3">
+					<h2 class="font-display text-4xl sm:text-6xl"><span class="text-gradient">+EduMap</span></h2>
+					<span class="rounded-full px-3 py-1 text-[0.62rem] font-bold uppercase tracking-widest text-violet-300 ring-1 ring-violet-400/30">En desarrollo</span>
 				</div>
-				<h2 class="font-display text-4xl sm:text-5xl"><span class="text-gradient">+EduMap</span></h2>
-				<p class="mt-6 text-lg leading-relaxed text-white/70">
-					Plataforma de gestión psicopedagógica integral: del despistaje al
-					seguimiento longitudinal, en un mismo sistema.
-				</p>
+				<p class="text-lg leading-relaxed text-white/70">Plataforma de gestión psicopedagógica integral: del despistaje al seguimiento longitudinal, en un mismo sistema.</p>
 			</div>
 
-			<div class="mt-14 grid gap-5 md:grid-cols-2">
-				<div class="rounded-4xl border border-white/10 bg-white/[0.03] p-8" data-reveal>
-					<h3 class="font-display text-xl text-cyan-300">Módulo 1 — Despistaje y Detección</h3>
-					<ul class="mt-5 space-y-3 text-white/80">
-						{eduMod1.map((it) => (<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400"></span>{it}</li>))}
-					</ul>
+			<div class="mt-12 grid gap-5 md:grid-cols-2">
+				<div class="overflow-hidden rounded-4xl border border-white/10 bg-white/[0.03]" data-reveal>
+					<div class="h-2.5 w-full bg-cyan-400"></div>
+					<div class="p-8">
+						<h3 class="font-display text-xl text-cyan-300">Módulo 1 — Despistaje y Detección</h3>
+						<ul class="mt-5 space-y-3 text-white/80">
+							{eduMod1.map((it) => (<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400"></span>{it}</li>))}
+						</ul>
+					</div>
 				</div>
-				<div class="rounded-4xl border border-white/10 bg-white/[0.03] p-8" data-reveal style="--reveal-delay:110ms">
-					<h3 class="font-display text-xl text-violet-300">Módulo 2 — Adecuación Curricular</h3>
-					<ul class="mt-5 space-y-3 text-white/80">
-						{eduMod2.map((it) => (<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400"></span>{it}</li>))}
-					</ul>
+				<div class="overflow-hidden rounded-4xl border border-white/10 bg-white/[0.03]" data-reveal style="--reveal-delay:110ms">
+					<div class="h-2.5 w-full bg-violet-500"></div>
+					<div class="p-8">
+						<h3 class="font-display text-xl text-violet-300">Módulo 2 — Adecuación Curricular</h3>
+						<ul class="mt-5 space-y-3 text-white/80">
+							{eduMod2.map((it) => (<li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400"></span>{it}</li>))}
+						</ul>
+					</div>
 				</div>
 			</div>
 
-			<p class="mt-14 text-center eyebrow text-white/45" data-reveal>Dos perfiles de usuario en el mismo sistema</p>
+			<p class="mt-12 text-center eyebrow text-white/45" data-reveal>Dos perfiles de usuario en el mismo sistema</p>
 			<div class="mt-6 grid gap-5 md:grid-cols-2">
-				<div class="rounded-4xl border border-cyan-400/20 bg-cyan-400/[0.04] p-8" data-reveal>
+				<div class="rounded-4xl border border-cyan-400/25 bg-cyan-400/[0.05] p-8" data-reveal>
 					<h4 class="font-display text-lg text-cyan-300">Equipo Psicopedagógico</h4>
 					<p class="mt-3 text-white/70">Panel técnico especializado con acceso completo a datos clínicos, gestión de perfiles y configuración de instrumentos de despistaje.</p>
 				</div>
-				<div class="rounded-4xl border border-violet-400/20 bg-violet-400/[0.04] p-8" data-reveal style="--reveal-delay:110ms">
+				<div class="rounded-4xl border border-violet-400/25 bg-violet-400/[0.05] p-8" data-reveal style="--reveal-delay:110ms">
 					<h4 class="font-display text-lg text-violet-300">Docente de Aula</h4>
 					<p class="mt-3 text-white/70">Panel pedagógico accesible: recomendaciones prácticas por materia, biblioteca de metodologías y generador de rúbricas.</p>
 				</div>
@@ -376,97 +366,62 @@ const audiencia = [
 		</div>
 	</section>
 
-	<!-- ============ MARCELA ============ -->
+	<!-- ============ 9 · PARA QUIÉN ============ -->
 	<section class="bg-white py-24 md:py-32">
-		<div class="mx-auto max-w-7xl px-5 sm:px-8">
-			<div class="max-w-3xl" data-reveal>
-				<p class="eyebrow mb-6 text-violet-600">La persona detrás de +EDU</p>
-				<h2 class="font-display text-4xl text-ink-900 sm:text-5xl md:text-[3.4rem]">
-					No asesora desde afuera.
-					<span class="text-gradient">Asesora desde adentro.</span>
-				</h2>
-			</div>
-
-			<div class="mt-14 grid gap-10 border-t border-ink-100 pt-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16" data-reveal style="--reveal-delay:120ms">
-				<div>
-					<p class="font-display text-3xl text-ink-900 sm:text-4xl">Marcela Cuenca</p>
-					<p class="mt-3 font-semibold text-violet-600">Fundadora de +EDU</p>
-					<p class="mt-1 text-ink-500">Consultora en educación e innovación institucional</p>
-					<p class="mt-7 flex items-baseline gap-2.5">
-						<span class="font-display text-5xl text-gradient">+20</span>
-						<span class="eyebrow text-ink-400">años en educación</span>
-					</p>
-				</div>
-				<div class="space-y-5 text-lg leading-relaxed text-ink-600">
-					<p>
-						Docente, administradora, directora y consultora en educación desde 2006.
-					</p>
-					<p>
-						Durante casi 15 años lideró BIOS Online, la unidad de e-learning del
-						grupo educativo BIOS: plataformas de aprendizaje, propuestas digitales
-						y gestión de equipos.
-					</p>
-					<p>
-						Hoy trabaja en tres centros educativos activos: dirige la innovación
-						pedagógica en BIOS, es docente en el Liceo Nuestra Señora de Fátima y la
-						Escuela Integral, y articula el bienestar estudiantil del Colegio Fátima.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ============ PARA QUIÉN ============ -->
-	<section class="bg-lavender-100 py-24 md:py-32">
-		<div class="mx-auto max-w-7xl px-5 sm:px-8">
-			<div class="max-w-2xl" data-reveal>
-				<p class="eyebrow mb-6 text-violet-600">Para quién trabajamos</p>
-				<h2 class="font-display text-4xl text-ink-900 sm:text-5xl">Centros educativos</h2>
-			</div>
-
-			<div class="mt-14 grid gap-5 sm:grid-cols-2">
-				{audiencia.map((a, i) => (
-					<div class="flex items-start gap-4 rounded-4xl border border-ink-100 bg-white p-7" data-reveal style={`--reveal-delay:${(i % 2) * 110}ms`}>
-						<span class={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${i % 2 === 0 ? "bg-cyan-400" : "bg-violet-500"}`}></span>
-						<p class="text-lg text-ink-700">{a}</p>
+		<div class="mx-auto max-w-6xl px-5 sm:px-8">
+			<h2 class="font-display text-4xl text-ink-900 sm:text-5xl" data-reveal>¿Para quién trabajamos?</h2>
+			<div class="mt-12 overflow-hidden rounded-4xl bg-lavender-100 p-9 sm:p-12" data-reveal style="--reveal-delay:100ms">
+				<div class="flex items-center justify-between">
+					<h3 class="font-display text-3xl text-ink-900">Centros Educativos</h3>
+					<div class="flex gap-2.5">
+						<span class="h-4 w-4 rounded-full bg-cyan-400"></span>
+						<span class="h-4 w-4 rounded-full bg-violet-500"></span>
 					</div>
-				))}
-			</div>
-
-			<div class="mt-12 grid items-center gap-8 rounded-4xl bg-ink-900 p-9 text-white sm:p-12 lg:grid-cols-[auto_1fr]" data-reveal>
-				<p class="font-display text-6xl text-gradient sm:text-7xl">10–15%</p>
-				<p class="max-w-2xl text-lg leading-relaxed text-white/75">
-					de la población escolar tiene alguna dificultad específica de aprendizaje
-					—y una proporción importante no tiene diagnóstico. La demanda de detección
-					y adecuación es real, creciente y subatendida.
-				</p>
+				</div>
+				<ul class="mt-8 grid gap-5 sm:grid-cols-2">
+					{audiencia.map((a) => (
+						<li class="flex items-start gap-3 text-lg text-ink-700">
+							<span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-violet-500"></span>{a}
+						</li>
+					))}
+				</ul>
 			</div>
 		</div>
 	</section>
 
-	<!-- ============ CONTACTO / CTA ============ -->
-	<section id="contacto" class="relative overflow-hidden bg-gradient-to-br from-iris-700 via-violet-700 to-violet-800 py-24 text-white md:py-32">
-		<div class="pointer-events-none absolute -left-10 top-0 h-72 w-72 rounded-full bg-cyan-400/20 blur-[100px]"></div>
+	<!-- ============ 10 · CONTACTO / CTA ============ -->
+	<section id="contacto" class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
+		<div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/60 to-transparent"></div>
+		<div class="pointer-events-none absolute -left-10 top-1/4 h-72 w-72 rounded-full bg-cyan-500/15 blur-[110px]"></div>
+		<div class="pointer-events-none absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-violet-600/20 blur-[110px]"></div>
 		<div class="relative mx-auto max-w-3xl px-5 text-center sm:px-8" data-reveal>
-			<Arch class="mx-auto mb-8 h-16 w-auto" />
-			<h2 class="font-display text-4xl sm:text-5xl md:text-[3.4rem]">
-				¿Tu institución se reconoce en esto?
-			</h2>
-			<p class="mx-auto mt-6 max-w-xl text-lg text-white/80">
-				El punto de partida es siempre el mismo: una conversación de 30 minutos
-				para entender tu institución y ver si +EDU puede acompañarte.
-			</p>
-			<div class="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-				<Button href={contact.whatsappCtaHref} variant="light" arrow>WhatsApp {contact.whatsapp}</Button>
-				<a href={contact.emailHref} class="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:border-white/60 hover:bg-white/5">
-					Enviar email
-				</a>
+			<Arch class="mx-auto mb-8 h-14 w-auto" />
+			<h2 class="font-display text-4xl sm:text-5xl md:text-[3.4rem]">¿Tu institución se reconoce en esto?</h2>
+			<p class="mt-6 text-white/60">El punto de partida es siempre el mismo:</p>
+			<div class="mx-auto mt-6 max-w-xl rounded-3xl bg-gradient-to-r from-cyan-400/90 to-cyan-500/90 px-6 py-5">
+				<p class="font-display text-xl text-ink-900 sm:text-2xl">Una conversación de 30 minutos para entender tu institución</p>
 			</div>
-			<div class="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-white/15 pt-8 text-sm text-white/70">
-				<span class="font-semibold text-white">Marcela Cuenca</span>
-				<a href={contact.siteHref} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-white">{contact.site}</a>
-				<a href={contact.emailHref} class="transition-colors hover:text-white">{contact.email}</a>
-				<a href={contact.linkedinHref} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-white">LinkedIn</a>
+			<div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+				<Button href={contact.whatsappCtaHref} variant="light" arrow>WhatsApp {contact.whatsapp}</Button>
+				<a href={contact.emailHref} class="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:border-white/60 hover:bg-white/5">Enviar email</a>
+			</div>
+			<div class="mx-auto mt-12 grid max-w-2xl grid-cols-2 gap-6 border-t border-white/15 pt-8 text-sm sm:grid-cols-4">
+				<div>
+					<p class="eyebrow text-white/40">Web</p>
+					<a href={contact.siteHref} target="_blank" rel="noopener noreferrer" class="mt-1 block text-white/85 hover:text-white">{contact.site}</a>
+				</div>
+				<div>
+					<p class="eyebrow text-white/40">WhatsApp</p>
+					<a href={contact.whatsappCtaHref} target="_blank" rel="noopener noreferrer" class="mt-1 block text-white/85 hover:text-white">{contact.whatsapp}</a>
+				</div>
+				<div>
+					<p class="eyebrow text-white/40">Email</p>
+					<a href={contact.emailHref} class="mt-1 block break-all text-white/85 hover:text-white">{contact.email}</a>
+				</div>
+				<div>
+					<p class="eyebrow text-white/40">LinkedIn</p>
+					<a href={contact.linkedinHref} target="_blank" rel="noopener noreferrer" class="mt-1 block text-white/85 hover:text-white">Marcela Cuenca</a>
+				</div>
 			</div>
 		</div>
 	</section>
