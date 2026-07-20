@@ -4,7 +4,7 @@ import { nav } from "../lib/site.ts";
 
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isActive = (href: string) => path === href.replace(/\/$/, "");
-const mainLinks = nav.filter((n) => n.href !== "/contacto");
+const mainLinks = nav.filter((n) => n.href !== "#contacto");
 ---
 
 <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
@@ -43,7 +43,7 @@ const mainLinks = nav.filter((n) => n.href !== "/contacto");
 				</a>
 			))}
 			<a
-				href="/contacto"
+				href="#contacto"
 				class="ml-3 inline-flex items-center gap-2 rounded-full bg-ink-900 px-5 py-2.5 text-[0.95rem] font-semibold text-white transition-all duration-300 hover:bg-violet-600 hover:-translate-y-0.5"
 			>
 				Conversemos
@@ -82,7 +82,7 @@ const mainLinks = nav.filter((n) => n.href !== "/contacto");
 			))}
 		</div>
 		<a
-			href="/contacto"
+			href="#contacto"
 			class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-4 text-lg font-semibold text-ink-950"
 		>
 			Agendá una llamada
