@@ -104,28 +104,19 @@ const audiencia = [
 	description="+EDU transforma centros educativos en comunidades reales mediante capacitación docente, consultoría institucional y la plataforma psicopedagógica +EduMap. Uruguay y LATAM."
 >
 	<!-- ============ 1 · HERO ============ -->
-	<section id="top" class="relative overflow-hidden bg-ink-900 text-white">
-		<div class="pointer-events-none absolute inset-0">
-			<div class="absolute -left-32 top-10 h-[32rem] w-[32rem] rounded-full bg-iris-600/25 blur-[120px]"></div>
-			<div class="absolute right-0 top-1/3 h-[28rem] w-[28rem] rounded-full bg-cyan-500/15 blur-[120px]"></div>
-		</div>
-		<div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:64px 64px;"></div>
-		<!-- large ghosted brand mark -->
-		<Arch class="pointer-events-none absolute -right-16 top-24 hidden h-[26rem] w-auto opacity-[0.07] lg:block" />
-
-		<div class="relative mx-auto max-w-6xl px-5 pt-40 pb-16 sm:px-8 lg:pt-48">
+	<section id="top" class="bg-ink-900 text-white">
+		<div class="mx-auto max-w-6xl px-5 pt-40 pb-16 sm:px-8 lg:pt-48">
 			<p class="eyebrow mb-8 text-cyan-300" data-reveal>Presentación de la propuesta</p>
-			<h1 class="max-w-4xl font-display text-[2.9rem] font-bold leading-[1.05] sm:text-6xl xl:text-[4.6rem]" data-reveal style="--reveal-delay:80ms">
-				Transformamos centros educativos en
-				<span class="text-gradient italic">comunidades reales.</span>
+			<h1 class="max-w-4xl font-display text-[2.9rem] font-bold leading-[1.06] sm:text-6xl xl:text-[4.6rem]" data-reveal style="--reveal-delay:80ms">
+				Transformamos centros educativos en comunidades reales.
 			</h1>
-			<p class="mt-8 max-w-2xl text-lg leading-relaxed text-white/75 sm:text-xl" data-reveal style="--reveal-delay:160ms">
+			<p class="mt-8 max-w-2xl text-lg leading-relaxed text-white/70 sm:text-xl" data-reveal style="--reveal-delay:160ms">
 				Donde estudiantes, docentes y familias dialogan, son atendidos y se
 				desarrollan.
 			</p>
 			<div class="mt-10 flex flex-col gap-3 sm:flex-row" data-reveal style="--reveal-delay:240ms">
 				<Button href={contact.whatsappCtaHref} variant="light" arrow>Conversemos 30 minutos</Button>
-				<a href="#ecosistema" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:border-white/50 hover:bg-white/5">
+				<a href="#ecosistema" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-white transition-colors duration-300 hover:bg-white/5">
 					Conocé el ecosistema
 				</a>
 			</div>
@@ -133,7 +124,7 @@ const audiencia = [
 			<div class="mt-16 grid grid-cols-2 gap-6 border-t border-white/10 pt-10 md:grid-cols-4" data-reveal style="--reveal-delay:320ms">
 				{stats.map(([v, l]) => (
 					<div>
-						<div class="font-display text-4xl font-bold text-gradient sm:text-5xl">{v}</div>
+						<div class="font-display text-4xl font-bold text-cyan-300 sm:text-5xl">{v}</div>
 						<div class="mt-1.5 text-sm text-white/55">{l}</div>
 					</div>
 				))}
@@ -144,24 +135,21 @@ const audiencia = [
 	<!-- ============ 2 · QUIÉNES SOMOS (split) ============ -->
 	<section id="quienes" class="bg-white py-24 md:py-32">
 		<div class="mx-auto grid max-w-6xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
-			<!-- dark left panel -->
-			<div class="relative flex min-h-[22rem] flex-col justify-between overflow-hidden rounded-4xl bg-ink-900 p-10 text-white" data-reveal>
-				<div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-violet-600/25 blur-[90px]"></div>
-				<h2 class="relative font-display text-4xl leading-tight sm:text-5xl">¿Quiénes<br />Somos?</h2>
-				<div class="relative mt-8 flex gap-3">
+			<div class="flex min-h-[22rem] flex-col justify-between rounded-4xl bg-ink-900 p-10 text-white" data-reveal>
+				<h2 class="font-display text-4xl leading-tight sm:text-5xl">¿Quiénes<br />Somos?</h2>
+				<div class="mt-8 flex gap-3">
 					<span class="h-5 w-5 rounded-full bg-cyan-400"></span>
 					<span class="h-5 w-5 rounded-full bg-violet-500"></span>
 				</div>
 			</div>
 
-			<!-- right content -->
 			<div class="flex flex-col justify-center" data-reveal style="--reveal-delay:120ms">
 				<p class="text-xl leading-relaxed text-ink-700">
 					Consultora, capacitadora y proveedora de una plataforma psicopedagógica
-					<span class="text-gradient font-semibold">especializada en educación.</span>
+					especializada en educación.
 				</p>
 				<div class="mt-8 grid gap-4 sm:grid-cols-2">
-					<div class="rounded-3xl border border-ink-100 bg-lavender-50 p-7">
+					<div class="rounded-3xl bg-lavender-100 p-7">
 						<h3 class="eyebrow mb-3 text-cyan-600">Misión</h3>
 						<p class="text-ink-700">
 							Transformar centros educativos en comunidades donde estudiantes,
@@ -170,7 +158,7 @@ const audiencia = [
 							personal.
 						</p>
 					</div>
-					<div class="rounded-3xl border border-ink-100 bg-lavender-50 p-7">
+					<div class="rounded-3xl bg-lavender-100 p-7">
 						<h3 class="eyebrow mb-3 text-violet-600">Visión</h3>
 						<p class="text-ink-700">
 							Ser la organización de referencia en América Latina para quienes
@@ -190,7 +178,7 @@ const audiencia = [
 			<h2 class="font-display text-4xl text-ink-900 sm:text-5xl" data-reveal>Nuestros valores</h2>
 			<div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 				{valores.map((v, i) => (
-					<div class="rounded-3xl bg-white p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift" data-reveal style={`--reveal-delay:${(i % 3) * 90}ms`}>
+					<div class="rounded-3xl bg-white p-7 shadow-soft" data-reveal style={`--reveal-delay:${(i % 3) * 90}ms`}>
 						<span class={`inline-block h-3.5 w-3.5 rounded-full ${v.dot}`}></span>
 						<h3 class="mt-4 font-display text-xl text-ink-900">{v.t}</h3>
 						<p class="mt-2.5 text-ink-600">{v.d}</p>
@@ -201,9 +189,8 @@ const audiencia = [
 	</section>
 
 	<!-- ============ 4 · MARCELA ============ -->
-	<section class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
-		<div class="pointer-events-none absolute -left-24 top-1/3 h-80 w-80 rounded-full bg-iris-600/20 blur-[120px]"></div>
-		<div class="relative mx-auto max-w-6xl px-5 sm:px-8">
+	<section class="bg-ink-900 py-24 text-white md:py-32">
+		<div class="mx-auto max-w-6xl px-5 sm:px-8">
 			<div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between" data-reveal>
 				<div>
 					<p class="eyebrow mb-5 text-cyan-300">La persona detrás de +EDU</p>
@@ -224,7 +211,7 @@ const audiencia = [
 				))}
 			</div>
 
-			<p class="mt-12 rounded-3xl border border-violet-400/40 bg-violet-500/10 px-8 py-6 text-center font-display text-xl italic text-white sm:text-2xl" data-reveal>
+			<p class="mt-12 rounded-3xl border border-violet-400/40 bg-violet-500/10 px-8 py-6 text-center font-display text-xl italic sm:text-2xl" data-reveal>
 				No asesora desde afuera. Asesora desde adentro.
 			</p>
 		</div>
@@ -244,7 +231,7 @@ const audiencia = [
 
 			<div class="mt-14 grid gap-6 md:grid-cols-3">
 				{pillars.map((p, i) => (
-					<a href={p.href} class="group flex flex-col overflow-hidden rounded-4xl border border-ink-100 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift" data-reveal style={`--reveal-delay:${i * 110}ms`}>
+					<a href={p.href} class="group flex flex-col overflow-hidden rounded-4xl border border-ink-100 bg-white shadow-soft transition-transform duration-300 hover:-translate-y-1.5" data-reveal style={`--reveal-delay:${i * 110}ms`}>
 						<div class={`h-2.5 w-full ${p.bar}`}></div>
 						<div class="flex flex-1 flex-col p-8">
 							<div class="flex items-center justify-between">
@@ -265,7 +252,7 @@ const audiencia = [
 				))}
 			</div>
 
-			<div class="mt-10 flex flex-col items-center gap-4 rounded-4xl border border-ink-100 bg-lavender-50 px-6 py-7 text-center sm:flex-row sm:justify-center sm:gap-6 sm:text-left" data-reveal>
+			<div class="mt-10 flex flex-col items-center gap-4 rounded-4xl bg-lavender-100 px-6 py-7 text-center sm:flex-row sm:justify-center sm:gap-6 sm:text-left" data-reveal>
 				<p class="text-ink-600">Un centro puede entrar por cualquiera de los tres y encontrar valor en los demás:</p>
 				<div class="flex items-center gap-3 font-display text-lg text-ink-900">
 					<span>Capacitación</span><span class="text-violet-400">→</span><span>Consultoría</span><span class="text-violet-400">→</span><span>Plataforma</span>
@@ -275,16 +262,15 @@ const audiencia = [
 	</section>
 
 	<!-- ============ 6 · CAPACITACIONES ============ -->
-	<section id="capacitaciones" class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
-		<div class="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-cyan-500/12 blur-[120px]"></div>
-		<div class="relative mx-auto max-w-6xl px-5 sm:px-8">
+	<section id="capacitaciones" class="bg-ink-900 py-24 text-white md:py-32">
+		<div class="mx-auto max-w-6xl px-5 sm:px-8">
 			<div class="max-w-3xl" data-reveal>
 				<h2 class="font-display text-4xl sm:text-5xl">Programa de Capacitaciones</h2>
 				<p class="mt-4 text-cyan-300">In-house en tu institución o jornadas abiertas · Disponibles ahora</p>
 			</div>
 			<div class="mt-12 space-y-3">
 				{capacitaciones.map((c, i) => (
-					<div class="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25 sm:flex-row sm:items-center sm:justify-between" data-reveal style={`--reveal-delay:${(i % 3) * 80}ms`}>
+					<div class="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 sm:flex-row sm:items-center sm:justify-between" data-reveal style={`--reveal-delay:${(i % 3) * 80}ms`}>
 						<div class="flex items-center gap-5">
 							<span class={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br ${c.grad} text-sm font-bold text-white`}>{c.n}</span>
 							<div>
@@ -308,7 +294,7 @@ const audiencia = [
 			</div>
 			<div class="mt-12 grid gap-5 md:grid-cols-2">
 				{servicios.map((s, i) => (
-					<div class="flex flex-col rounded-4xl bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift" data-reveal style={`--reveal-delay:${(i % 2) * 110}ms`}>
+					<div class="flex flex-col rounded-4xl bg-white p-8 shadow-soft" data-reveal style={`--reveal-delay:${(i % 2) * 110}ms`}>
 						<span class={`self-start rounded-full px-3 py-1 text-[0.62rem] font-bold uppercase tracking-widest ${s.tagClass}`}>{s.tag}</span>
 						<h3 class="mt-4 font-display text-2xl text-ink-900">{s.t}</h3>
 						<p class="mt-3 flex-1 text-ink-600">{s.d}</p>
@@ -320,12 +306,11 @@ const audiencia = [
 	</section>
 
 	<!-- ============ 8 · +EDUMAP ============ -->
-	<section id="edumap" class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
-		<div class="pointer-events-none absolute -left-20 top-1/4 h-80 w-80 rounded-full bg-violet-600/18 blur-[120px]"></div>
-		<div class="relative mx-auto max-w-6xl px-5 sm:px-8">
+	<section id="edumap" class="bg-ink-900 py-24 text-white md:py-32">
+		<div class="mx-auto max-w-6xl px-5 sm:px-8">
 			<div class="max-w-3xl" data-reveal>
 				<div class="mb-4 flex items-center gap-3">
-					<h2 class="font-display text-4xl sm:text-6xl"><span class="text-gradient">+EduMap</span></h2>
+					<h2 class="font-display text-4xl sm:text-6xl text-cyan-300">+EduMap</h2>
 					<span class="rounded-full px-3 py-1 text-[0.62rem] font-bold uppercase tracking-widest text-violet-300 ring-1 ring-violet-400/30">En desarrollo</span>
 				</div>
 				<p class="text-lg leading-relaxed text-white/70">Plataforma de gestión psicopedagógica integral: del despistaje al seguimiento longitudinal, en un mismo sistema.</p>
@@ -354,11 +339,11 @@ const audiencia = [
 
 			<p class="mt-12 text-center eyebrow text-white/45" data-reveal>Dos perfiles de usuario en el mismo sistema</p>
 			<div class="mt-6 grid gap-5 md:grid-cols-2">
-				<div class="rounded-4xl border border-cyan-400/25 bg-cyan-400/[0.05] p-8" data-reveal>
+				<div class="rounded-4xl border border-cyan-400/25 bg-white/[0.03] p-8" data-reveal>
 					<h4 class="font-display text-lg text-cyan-300">Equipo Psicopedagógico</h4>
 					<p class="mt-3 text-white/70">Panel técnico especializado con acceso completo a datos clínicos, gestión de perfiles y configuración de instrumentos de despistaje.</p>
 				</div>
-				<div class="rounded-4xl border border-violet-400/25 bg-violet-400/[0.05] p-8" data-reveal style="--reveal-delay:110ms">
+				<div class="rounded-4xl border border-violet-400/25 bg-white/[0.03] p-8" data-reveal style="--reveal-delay:110ms">
 					<h4 class="font-display text-lg text-violet-300">Docente de Aula</h4>
 					<p class="mt-3 text-white/70">Panel pedagógico accesible: recomendaciones prácticas por materia, biblioteca de metodologías y generador de rúbricas.</p>
 				</div>
@@ -370,7 +355,7 @@ const audiencia = [
 	<section class="bg-white py-24 md:py-32">
 		<div class="mx-auto max-w-6xl px-5 sm:px-8">
 			<h2 class="font-display text-4xl text-ink-900 sm:text-5xl" data-reveal>¿Para quién trabajamos?</h2>
-			<div class="mt-12 overflow-hidden rounded-4xl bg-lavender-100 p-9 sm:p-12" data-reveal style="--reveal-delay:100ms">
+			<div class="mt-12 rounded-4xl bg-lavender-100 p-9 sm:p-12" data-reveal style="--reveal-delay:100ms">
 				<div class="flex items-center justify-between">
 					<h3 class="font-display text-3xl text-ink-900">Centros Educativos</h3>
 					<div class="flex gap-2.5">
@@ -390,20 +375,17 @@ const audiencia = [
 	</section>
 
 	<!-- ============ 10 · CONTACTO / CTA ============ -->
-	<section id="contacto" class="relative overflow-hidden bg-ink-900 py-24 text-white md:py-32">
-		<div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/60 to-transparent"></div>
-		<div class="pointer-events-none absolute -left-10 top-1/4 h-72 w-72 rounded-full bg-cyan-500/15 blur-[110px]"></div>
-		<div class="pointer-events-none absolute -right-10 bottom-0 h-72 w-72 rounded-full bg-violet-600/20 blur-[110px]"></div>
-		<div class="relative mx-auto max-w-3xl px-5 text-center sm:px-8" data-reveal>
+	<section id="contacto" class="bg-ink-900 py-24 text-white md:py-32">
+		<div class="mx-auto max-w-3xl px-5 text-center sm:px-8" data-reveal>
 			<Arch class="mx-auto mb-8 h-14 w-auto" />
 			<h2 class="font-display text-4xl sm:text-5xl md:text-[3.4rem]">¿Tu institución se reconoce en esto?</h2>
 			<p class="mt-6 text-white/60">El punto de partida es siempre el mismo:</p>
-			<div class="mx-auto mt-6 max-w-xl rounded-3xl bg-gradient-to-r from-cyan-400/90 to-cyan-500/90 px-6 py-5">
+			<div class="mx-auto mt-6 max-w-xl rounded-3xl bg-cyan-400 px-6 py-5">
 				<p class="font-display text-xl text-ink-900 sm:text-2xl">Una conversación de 30 minutos para entender tu institución</p>
 			</div>
 			<div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
 				<Button href={contact.whatsappCtaHref} variant="light" arrow>WhatsApp {contact.whatsapp}</Button>
-				<a href={contact.emailHref} class="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-white transition-all duration-300 hover:border-white/60 hover:bg-white/5">Enviar email</a>
+				<a href={contact.emailHref} class="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-white transition-colors duration-300 hover:bg-white/5">Enviar email</a>
 			</div>
 			<div class="mx-auto mt-12 grid max-w-2xl grid-cols-2 gap-6 border-t border-white/15 pt-8 text-sm sm:grid-cols-4">
 				<div>
