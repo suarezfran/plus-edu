@@ -4,13 +4,6 @@ import Arch from "../components/Arch.astro";
 import Button from "../components/Button.astro";
 import { contact } from "../lib/site.ts";
 
-const stats = [
-	["+20", "años en educación"],
-	["3", "centros activos"],
-	["6", "líneas de capacitación"],
-	["LATAM", "Uruguay y la región"],
-];
-
 const pillars = [
 	{
 		name: "Capacitación",
@@ -105,7 +98,7 @@ const audiencia = [
 >
 	<!-- ============ 1 · HERO ============ -->
 	<section id="top" class="bg-ink-900 text-white">
-		<div class="mx-auto max-w-6xl px-5 pt-40 pb-16 sm:px-8 lg:pt-48">
+		<div class="mx-auto max-w-6xl px-5 pt-40 pb-32 sm:px-8 lg:pt-48 lg:pb-44">
 			<h1 class="max-w-4xl font-display text-[2.9rem] font-bold leading-[1.06] sm:text-6xl xl:text-[4.6rem]" data-reveal>
 				Transformamos centros educativos en comunidades reales.
 			</h1>
@@ -118,15 +111,6 @@ const audiencia = [
 				<a href="#ecosistema" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-semibold text-white transition-colors duration-300 hover:bg-white/5">
 					Conocé el ecosistema
 				</a>
-			</div>
-
-			<div class="mt-16 grid grid-cols-2 gap-6 border-t border-white/10 pt-10 md:grid-cols-4" data-reveal style="--reveal-delay:320ms">
-				{stats.map(([v, l]) => (
-					<div>
-						<div class="font-display text-4xl font-bold text-cyan-300 sm:text-5xl">{v}</div>
-						<div class="mt-1.5 text-sm text-white/55">{l}</div>
-					</div>
-				))}
 			</div>
 		</div>
 	</section>

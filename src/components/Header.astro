@@ -1,5 +1,4 @@
 ---
-import Arch from "./Arch.astro";
 import { nav } from "../lib/site.ts";
 
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
@@ -16,11 +15,8 @@ const mainLinks = nav.filter((n) => n.href !== "#contacto");
 
 	<nav class="relative mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8">
 		<!-- Brand -->
-		<a href="/" class="group flex items-center gap-2.5" aria-label="+EDU Consultora — Inicio">
-			<Arch class="h-7 w-auto transition-transform duration-300 group-hover:-translate-y-0.5" />
-			<span class="font-display text-2xl font-semibold leading-none tracking-tight text-ink-900">
-				<span class="text-violet-500">+</span>EDU
-			</span>
+		<a href="/" class="group flex items-center" aria-label="+EDU Consultora — Inicio">
+			<img src="/logo.svg" alt="+EDU Consultora" class="h-16 w-auto transition-transform duration-300 group-hover:-translate-y-0.5" />
 		</a>
 
 		<!-- Desktop nav -->

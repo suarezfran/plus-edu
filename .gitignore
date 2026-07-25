@@ -26,3 +26,8 @@ pnpm-debug.log*
 # source brief & raw brand assets (not part of the site build)
 MasEDU_Presentacion_Comercial.docx
 WhatsApp Image*.jpeg
+
+# archivos de trabajo/fuente (no forman parte del sitio desplegado)
+*.pptx
+~$*
+/logo.svg
