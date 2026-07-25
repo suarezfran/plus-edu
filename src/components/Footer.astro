@@ -37,21 +37,13 @@ import { nav, contact } from "../lib/site.ts";
 				<h3 class="eyebrow mb-5 text-cyan-300">Hablemos</h3>
 				<ul class="space-y-3 text-white/75">
 					<li>
-						<a href={contact.whatsappHref} target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 transition-colors hover:text-white">
-							<span class="text-white/40 group-hover:text-cyan-300">WhatsApp</span> {contact.whatsapp}
-						</a>
+						<a href={contact.whatsappCtaHref} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-white">WhatsApp</a>
 					</li>
 					<li>
-						<a href={contact.emailHref} class="break-all transition-colors hover:text-white">{contact.email}</a>
-					</li>
-					<li>
-						<a href={contact.instagramHref} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-white">{contact.instagram}</a>
+						<a href={contact.emailHref} class="transition-colors hover:text-white">Enviar email</a>
 					</li>
 					<li>
 						<a href={contact.linkedinHref} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-white">LinkedIn · {contact.linkedin}</a>
-					</li>
-					<li>
-						<a href={contact.siteHref} target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-white">{contact.site}</a>
 					</li>
 				</ul>
 			</div>
